@@ -11,7 +11,7 @@ export default function DemoScreen() {
   const theme = useColorScheme() ?? 'light';
   const demo = getDemoById(demoId);
 
-  if (!demo) {
+  if (!demo || !demo.component) {
     return (
       <View className="flex-1 items-center justify-center bg-white dark:bg-[#151718]">
         <Stack.Screen options={{ title: 'Not Found' }} />

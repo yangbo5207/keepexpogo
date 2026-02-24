@@ -20,5 +20,6 @@ export interface DemoCase {
   id: string;
   title: string;
   description: string;
-  component: () => Promise<{ default: ComponentType }>;
+  component?: () => Promise<{ default: ComponentType }>;
+  route?: string;
 }

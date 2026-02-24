@@ -4,14 +4,13 @@ import { useLocalSearchParams, useRouter, Stack } from 'expo-router';
 
 import { Collapsible } from '@/components/ui/collapsible';
 import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
 import { getCategoryById } from '@/content/learn';
+
+const ACCENT = '#0a7ea4';
 
 export default function CategoryScreen() {
   const { categoryId } = useLocalSearchParams<{ categoryId: string }>();
   const router = useRouter();
-  const theme = useColorScheme() ?? 'light';
   const category = getCategoryById(categoryId);
 
   if (!category) {
@@ -51,7 +50,7 @@ export default function CategoryScreen() {
             <View className="mb-3.5 flex-row items-start gap-3">
               <View
                 className="h-9 w-9 items-center justify-center rounded-[10px]"
-                style={{ backgroundColor: Colors[theme].tint }}>
+                style={{ backgroundColor: ACCENT }}>
                 <Text className="text-sm font-bold text-white">
                   {String(index + 1).padStart(2, '0')}
                 </Text>
@@ -77,20 +76,24 @@ export default function CategoryScreen() {
                     <Pressable
                       key={demo.id}
                       className="flex-row items-center gap-3 rounded-xl bg-neutral-100 p-3.5 active:bg-neutral-200 dark:bg-neutral-600/50 dark:active:bg-neutral-600"
-                      onPress={() =>
-                        router.push({
-                          pathname: '/learn/demo/[demoId]',
-                          params: { demoId: demo.id },
-                        })
-                      }>
+                      onPress={() => {
+                        if (demo.route) {
+                          router.push(demo.route as any);
+                        } else {
+                          router.push({
+                            pathname: '/learn/demo/[demoId]',
+                            params: { demoId: demo.id },
+                          });
+                        }
+                      }}>
                       {/* Demo icon */}
                       <View
                         className="h-10 w-10 items-center justify-center rounded-xl"
-                        style={{ backgroundColor: Colors[theme].tint + '18' }}>
+                        style={{ backgroundColor: ACCENT + '18' }}>
                         <IconSymbol
                           name="chevron.left.forwardslash.chevron.right"
                           size={18}
-                          color={Colors[theme].tint}
+                          color={ACCENT}
                         />
                       </View>
 
@@ -107,7 +110,7 @@ export default function CategoryScreen() {
                       {/* Run button */}
                       <View
                         className="h-7 w-7 items-center justify-center rounded-full"
-                        style={{ backgroundColor: Colors[theme].tint }}>
+                        style={{ backgroundColor: ACCENT }}>
                         <IconSymbol name="chevron.right" size={14} color="#fff" />
                       </View>
                     </Pressable>

@@ -2,11 +2,13 @@ import { Category, DemoCase } from '@/types/learn';
 import reactBasics from './01-react-basics';
 import navigation from './02-navigation';
 import styling from './03-styling';
+import expoRouter from './04-expo-router';
 
 export const categories: Category[] = [
   reactBasics,
   navigation,
   styling,
+  expoRouter,
 ].sort((a, b) => a.order - b.order);
 
 export function getCategoryById(id: string): Category | undefined {
