@@ -1,7 +1,7 @@
 import { Drawer } from 'expo-router/drawer';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { useRouter, usePathname } from 'expo-router';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 import type { DrawerContentComponentProps } from '@react-navigation/drawer';
 
 const menuItems = [
@@ -80,7 +80,7 @@ export default function DrawerCustomLayout() {
     <Drawer
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       screenOptions={{
-        headerRight: () => <DemoCloseButton />,
+        headerRight: () => <DemoBackButton />,
       }}
     >
       <Drawer.Screen name="index" options={{ title: 'Dashboard' }} />

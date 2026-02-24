@@ -1,32 +1,28 @@
 import { Stack } from 'expo-router';
 import { DemoBackButton } from '@/components/demo-back-button';
 
-export default function StackOptionsLayout() {
+export default function AnimInterpolateLayout() {
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: '#14b8a6' },
+        headerStyle: { backgroundColor: '#f97316' },
         headerTintColor: '#fff',
       }}
     >
       <Stack.Screen
         name="index"
         options={{
-          title: 'Products',
+          title: 'Interpolation',
           headerLeft: () => <DemoBackButton />,
         }}
       />
       <Stack.Screen
-        name="detail"
-        options={{ title: 'Product Detail' }}
+        name="color"
+        options={{ title: 'Color Interpolation' }}
       />
       <Stack.Screen
-        name="modal"
-        options={{
-          title: 'Quick View',
-          presentation: 'modal',
-          headerShown: false,
-        }}
+        name="rotation"
+        options={{ title: 'Rotation' }}
       />
     </Stack>
   );

@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 import { View, Text, Pressable } from 'react-native';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 
 function CustomTitle() {
   return (
@@ -23,7 +23,7 @@ export default function StackHeaderLayout() {
         name="index"
         options={{
           title: 'Home',
-          headerLeft: () => <DemoCloseButton />,
+          headerLeft: () => <DemoBackButton />,
           headerStyle: { backgroundColor: '#6366f1' },
           headerTintColor: '#fff',
           headerRight: () => (

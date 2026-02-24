@@ -1,12 +1,12 @@
 import { Tabs } from 'expo-router';
 import { Text } from 'react-native';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 
 export default function TabsHiddenLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerRight: () => <DemoCloseButton />,
+        headerRight: () => <DemoBackButton />,
         headerStyle: { backgroundColor: '#6366f1' },
         headerTintColor: '#fff',
       }}

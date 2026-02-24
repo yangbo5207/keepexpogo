@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 
 export default function DynamicCatchallLayout() {
   return (
@@ -8,7 +8,7 @@ export default function DynamicCatchallLayout() {
         name="index"
         options={{
           title: 'Documentation',
-          headerLeft: () => <DemoCloseButton />,
+          headerLeft: () => <DemoBackButton />,
           headerStyle: { backgroundColor: '#6366f1' },
           headerTintColor: '#fff',
         }}

@@ -1,7 +1,7 @@
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../_context';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 
 export default function AuthLogin() {
   const { signIn } = useAuth();
@@ -12,7 +12,7 @@ export default function AuthLogin() {
       <View className="flex-row items-center gap-2 rounded-lg bg-amber-50 px-3 py-2 dark:bg-amber-900/20">
         <Text className="text-xs">🔒</Text>
         <Text className="flex-1 font-mono text-xs text-amber-600 dark:text-amber-400">(auth) group — not logged in</Text>
-        <DemoCloseButton />
+        <DemoBackButton />
       </View>
 
       <View className="items-center gap-2 pt-4">

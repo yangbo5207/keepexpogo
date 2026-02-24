@@ -1,11 +1,11 @@
 import { Drawer } from 'expo-router/drawer';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 
 export default function DrawerBasicLayout() {
   return (
     <Drawer
       screenOptions={{
-        headerRight: () => <DemoCloseButton />,
+        headerRight: () => <DemoBackButton />,
         headerStyle: { backgroundColor: '#6366f1' },
         headerTintColor: '#fff',
         drawerActiveTintColor: '#6366f1',

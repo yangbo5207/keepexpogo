@@ -1,7 +1,7 @@
 import { Tabs } from 'expo-router';
 import { View, Text, Pressable, Animated } from 'react-native';
 import { useRef, useEffect } from 'react';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 const TAB_ITEMS = [
@@ -65,7 +65,7 @@ export default function TabsCustomLayout() {
     <Tabs
       tabBar={(props) => <CustomTabBar {...props} />}
       screenOptions={{
-        headerRight: () => <DemoCloseButton />,
+        headerRight: () => <DemoBackButton />,
         headerStyle: { backgroundColor: '#6366f1' },
         headerTintColor: '#fff',
       }}

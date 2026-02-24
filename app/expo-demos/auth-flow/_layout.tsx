@@ -1,7 +1,7 @@
 import { Stack, Redirect } from 'expo-router';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { AuthProvider, useAuth } from './_context';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 
 function AuthLayoutInner() {
   const { user, isLoading } = useAuth();
@@ -14,7 +14,7 @@ function AuthLayoutInner() {
         <Text className="mt-1 text-sm text-indigo-300">Loading...</Text>
         <ActivityIndicator className="mt-6" color="#fff" size="large" />
         <View className="absolute bottom-8 left-6 right-6">
-          <DemoCloseButton />
+          <DemoBackButton />
         </View>
       </View>
     );

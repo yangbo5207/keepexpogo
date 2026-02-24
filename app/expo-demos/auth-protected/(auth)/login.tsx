@@ -1,6 +1,6 @@
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { useProtectedAuth } from '../_context';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 
 const presetUsers = {
   admin: { name: 'Admin', emoji: '👑', desc: 'Full access' },
@@ -16,7 +16,7 @@ export default function ProtectedLogin() {
       <View className="flex-row items-center gap-2 rounded-lg bg-amber-50 px-3 py-2 dark:bg-amber-900/20">
         <Text className="text-xs">🔒</Text>
         <Text className="flex-1 font-mono text-xs text-amber-600 dark:text-amber-400">(auth) group — not logged in</Text>
-        <DemoCloseButton />
+        <DemoBackButton />
       </View>
       <Text className="text-center text-sm text-gray-500 dark:text-gray-400">
         Choose a role to sign in. Each role has different access permissions.

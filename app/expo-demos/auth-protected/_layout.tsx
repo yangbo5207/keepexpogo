@@ -1,7 +1,7 @@
 import { Stack, Redirect } from 'expo-router';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { ProtectedAuthProvider, useProtectedAuth } from './_context';
-import { DemoCloseButton } from '@/components/demo-close-button';
+import { DemoBackButton } from '@/components/demo-back-button';
 import { useState, useEffect } from 'react';
 
 function ProtectedLayoutInner() {
@@ -33,7 +33,7 @@ function ProtectedLayoutInner() {
           {splashProgress < 30 ? 'Loading config...' : splashProgress < 60 ? 'Checking token...' : splashProgress < 90 ? 'Verifying session...' : 'Ready!'}
         </Text>
         <View className="absolute bottom-8 left-6 right-6">
-          <DemoCloseButton />
+          <DemoBackButton />
         </View>
       </View>
     );
