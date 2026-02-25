@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState } from 'react';
 import { Animated, Pressable, Text, View } from 'react-native';
 
 function StepControl({
@@ -44,7 +44,7 @@ export default function SpringScreen() {
   const [tension, setTension] = useState(40);
   const [friction, setFriction] = useState(7);
 
-  const bounce = useCallback(() => {
+  const bounce = () => {
     scaleAnim.setValue(0.3);
     Animated.spring(scaleAnim, {
       toValue: 1,
@@ -52,7 +52,7 @@ export default function SpringScreen() {
       friction,
       useNativeDriver: true,
     }).start();
-  }, [tension, friction, scaleAnim]);
+  };
 
   return (
     <View className="flex-1 bg-white dark:bg-[#151718]">

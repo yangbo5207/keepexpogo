@@ -4,73 +4,111 @@
 
 @import "nativewind/theme";
 
+/* ═══════════════════════════════════════════════
+   奶白轻奢 — Creamy White Light-Luxury Theme
+   ═══════════════════════════════════════════════ */
+
 @theme {
-  /* ── Brand Colors: primary (blue) ── */
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
+  /* ── Surface: Cream 奶白 (light mode) ─────────
+     bg-cream-50  → 页面底色
+     bg-cream-100 → 主表面
+     bg-cream-200 → 卡片/抬升表面
+     bg-cream-300 → 分割线/边框
+   ──────────────────────────────────────────── */
+  --color-cream-50: #fffdf7;
+  --color-cream-100: #fbf8f0;
+  --color-cream-200: #f5efdf;
+  --color-cream-300: #ede4ce;
+  --color-cream-400: #e0d4b8;
+  --color-cream-500: #ccbf9e;
+  --color-cream-600: #b3a57e;
+  --color-cream-700: #958362;
+  --color-cream-800: #74644a;
+  --color-cream-900: #584a35;
 
-  /* ── Brand Colors: secondary (violet) ── */
-  --color-secondary-50: #f5f3ff;
-  --color-secondary-100: #ede9fe;
-  --color-secondary-200: #ddd6fe;
-  --color-secondary-300: #c4b5fd;
-  --color-secondary-400: #a78bfa;
-  --color-secondary-500: #8b5cf6;
-  --color-secondary-600: #7c3aed;
-  --color-secondary-700: #6d28d9;
-  --color-secondary-800: #5b21b6;
-  --color-secondary-900: #4c1d95;
+  /* ── Surface: Night 暖夜 (dark mode) ──────────
+     dark:bg-night-800 → 页面底色
+     dark:bg-night-700 → 主表面
+     dark:bg-night-600 → 卡片/抬升表面
+     dark:bg-night-500 → 分割线/边框
+   ──────────────────────────────────────────── */
+  --color-night-50: #ede9e0;
+  --color-night-100: #c9c3b7;
+  --color-night-200: #9e978a;
+  --color-night-300: #746e62;
+  --color-night-400: #524d43;
+  --color-night-500: #3d3830;
+  --color-night-600: #302c25;
+  --color-night-700: #25221c;
+  --color-night-800: #1c1a15;
+  --color-night-900: #14120f;
 
-  /* ── Brand Colors: success (emerald) ── */
-  --color-success-50: #ecfdf5;
-  --color-success-100: #d1fae5;
-  --color-success-200: #a7f3d0;
-  --color-success-300: #6ee7b7;
-  --color-success-400: #34d399;
-  --color-success-500: #10b981;
-  --color-success-600: #059669;
-  --color-success-700: #047857;
-  --color-success-800: #065f46;
-  --color-success-900: #064e3b;
+  /* ── Primary: Mocha 摩卡棕 ─────────────────── */
+  --color-primary-50: #f6f2ef;
+  --color-primary-100: #eae0d9;
+  --color-primary-200: #d4c0af;
+  --color-primary-300: #ba9b82;
+  --color-primary-400: #a07a5c;
+  --color-primary-500: #876045;
+  --color-primary-600: #6e4d38;
+  --color-primary-700: #593e2e;
+  --color-primary-800: #463226;
+  --color-primary-900: #38281f;
 
-  /* ── Brand Colors: danger (rose) ── */
-  --color-danger-50: #fff1f2;
-  --color-danger-100: #ffe4e6;
-  --color-danger-200: #fecdd3;
-  --color-danger-300: #fda4af;
-  --color-danger-400: #fb7185;
-  --color-danger-500: #f43f5e;
-  --color-danger-600: #e11d48;
-  --color-danger-700: #be123c;
-  --color-danger-800: #9f1239;
-  --color-danger-900: #881337;
+  /* ── Secondary: Taupe Rosé 灰玫瑰 ─────────── */
+  --color-secondary-50: #faf6f4;
+  --color-secondary-100: #f3eae6;
+  --color-secondary-200: #e6d5ce;
+  --color-secondary-300: #d6bab0;
+  --color-secondary-400: #c19a8d;
+  --color-secondary-500: #a87d6f;
+  --color-secondary-600: #8e6458;
+  --color-secondary-700: #735047;
+  --color-secondary-800: #5e413b;
+  --color-secondary-900: #4c3530;
 
-  /* ── Brand Colors: warning (amber) ── */
-  --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-200: #fde68a;
-  --color-warning-300: #fcd34d;
-  --color-warning-400: #fbbf24;
-  --color-warning-500: #f59e0b;
-  --color-warning-600: #d97706;
-  --color-warning-700: #b45309;
-  --color-warning-800: #92400e;
-  --color-warning-900: #78350f;
+  /* ── Success: Sage 鼠尾草绿 ────────────────── */
+  --color-success-50: #f5f7f2;
+  --color-success-100: #e8ede2;
+  --color-success-200: #d0dbc6;
+  --color-success-300: #b1c4a0;
+  --color-success-400: #8eaa78;
+  --color-success-500: #729158;
+  --color-success-600: #5b7646;
+  --color-success-700: #4a5f3a;
+  --color-success-800: #3d4d31;
+  --color-success-900: #333f29;
 
-  /* ── Semantic Spacing ── */
+  /* ── Danger: Dusty Coral 暮色珊瑚 ──────────── */
+  --color-danger-50: #fdf5f3;
+  --color-danger-100: #fbe8e4;
+  --color-danger-200: #f7cfca;
+  --color-danger-300: #f1ada4;
+  --color-danger-400: #e78574;
+  --color-danger-500: #d9644f;
+  --color-danger-600: #c04a37;
+  --color-danger-700: #9d3c2c;
+  --color-danger-800: #803327;
+  --color-danger-900: #6a2c23;
+
+  /* ── Warning: Warm Honey 暖蜜 ──────────────── */
+  --color-warning-50: #fdf8ec;
+  --color-warning-100: #faeecf;
+  --color-warning-200: #f4da9c;
+  --color-warning-300: #edc261;
+  --color-warning-400: #e4ab34;
+  --color-warning-500: #d0941f;
+  --color-warning-600: #b17918;
+  --color-warning-700: #905f16;
+  --color-warning-800: #754c16;
+  --color-warning-900: #603e15;
+
+  /* ── Semantic Spacing ──────────────────────── */
   --spacing-13: 3.25rem;
   --spacing-15: 3.75rem;
   --spacing-18: 4.5rem;
 
-  /* ── Semantic Border Radius ── */
+  /* ── Semantic Border Radius ────────────────── */
   --radius-button: 0.625rem;
   --radius-card: 1rem;
   --radius-dialog: 1.25rem;

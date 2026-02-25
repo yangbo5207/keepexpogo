@@ -1,4 +1,4 @@
-import { useCallback, useRef } from "react";
+import { useRef } from "react";
 import {
   Animated,
   PanResponder,
@@ -31,12 +31,12 @@ export default function DecayScreen() {
     }),
   ).current;
 
-  const reset = useCallback(() => {
+  const reset = () => {
     position.stopAnimation(() => {
       position.setOffset({ x: 0, y: 0 });
       position.setValue({ x: 0, y: 0 });
     });
-  }, [position]);
+  };
 
   return (
     <View className="flex-1 bg-white dark:bg-[#151718]">

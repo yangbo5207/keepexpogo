@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import { Animated, Pressable, Text, View } from 'react-native';
+import { useRef, useState } from "react";
+import { Animated, Pressable, Text, View } from "react-native";
 
 const STEPS = [0, 0.25, 0.5, 0.75, 1];
 
@@ -9,7 +9,7 @@ export default function ColorScreen() {
 
   const backgroundColor = colorAnim.interpolate({
     inputRange: [0, 0.5, 1],
-    outputRange: ['rgb(249,115,22)', 'rgb(34,197,94)', 'rgb(59,130,246)'],
+    outputRange: ["rgb(249,115,22)", "rgb(34,197,94)", "rgb(59,130,246)"],
   });
 
   const animateTo = (value: number) => {
@@ -30,8 +30,8 @@ export default function ColorScreen() {
             width: 200,
             height: 200,
             borderRadius: 2,
-            alignItems: 'center',
-            justifyContent: 'center',
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <Text className="text-4xl font-bold text-white">
@@ -59,29 +59,22 @@ export default function ColorScreen() {
               key={val}
               className={`flex-1 items-center rounded-xs py-2.5 active:opacity-80 ${
                 currentVal === val
-                  ? 'bg-orange-500'
-                  : 'bg-gray-200 dark:bg-gray-700'
+                  ? "bg-orange-500"
+                  : "bg-gray-200 dark:bg-gray-700"
               }`}
               onPress={() => animateTo(val)}
             >
               <Text
                 className={`text-sm font-semibold ${
                   currentVal === val
-                    ? 'text-white'
-                    : 'text-gray-700 dark:text-gray-300'
+                    ? "text-white"
+                    : "text-gray-700 dark:text-gray-300"
                 }`}
               >
                 {val}
               </Text>
             </Pressable>
           ))}
-        </View>
-
-        <View className="rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
-          <Text className="text-xs text-blue-700 dark:text-blue-300">
-            颜色插值通过 inputRange/outputRange 将 0→0.5→1 映射为 橙→绿→蓝。
-            点击按钮时用 Animated.timing 平滑过渡。注意：颜色插值不支持 useNativeDriver: true。
-          </Text>
         </View>
       </View>
     </View>

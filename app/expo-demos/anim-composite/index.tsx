@@ -16,10 +16,28 @@ const demos: {
     desc: 'Three boxes animate one after another: move, change color, and scale in sequence.',
   },
   {
+    title: 'Parallel',
+    route: '/expo-demos/anim-composite/parallel',
+    icon: 'sync',
+    desc: 'Opacity, scale and rotation animate simultaneously using Animated.parallel.',
+  },
+  {
     title: 'Stagger',
     route: '/expo-demos/anim-composite/stagger',
     icon: 'view-list',
     desc: 'Eight list items fade in and slide from the left with staggered delays.',
+  },
+  {
+    title: 'Loop',
+    route: '/expo-demos/anim-composite/loop',
+    icon: 'loop',
+    desc: 'Animated.loop for continuous spinning and pulsing effects.',
+  },
+  {
+    title: 'Button Feedback',
+    route: '/expo-demos/anim-composite/button-feedback',
+    icon: 'touch-app',
+    desc: 'Practical button press effects combining spring, sequence, loop and parallel.',
   },
 ];
 

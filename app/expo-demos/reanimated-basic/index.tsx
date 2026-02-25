@@ -1,41 +1,41 @@
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { View, Text, Pressable, ScrollView } from 'react-native';
-import { useRouter } from 'expo-router';
-import { ComponentProps } from 'react';
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { View, Text, Pressable, ScrollView } from "react-native";
+import { useRouter } from "expo-router";
+import { ComponentProps } from "react";
 
 const demos: {
   title: string;
   route: string;
-  icon: ComponentProps<typeof MaterialIcons>['name'];
+  icon: ComponentProps<typeof MaterialIcons>["name"];
   desc: string;
 }[] = [
   {
-    title: 'Color Interpolation',
-    route: '/expo-demos/anim-interpolate/color',
-    icon: 'palette',
-    desc: 'Drag a slider to interpolate Animated.Value into a smooth background color gradient.',
+    title: "Spring Move",
+    route: "/expo-demos/reanimated-basic/spring-move",
+    icon: "swap-horiz",
+    desc: "useSharedValue + useAnimatedStyle + withSpring to move a box.",
   },
   {
-    title: 'Rotation',
-    route: '/expo-demos/anim-interpolate/rotation',
-    icon: 'rotate-right',
-    desc: 'Infinite spinning loader and a manual angle control via interpolation.',
+    title: "Timing Move",
+    route: "/expo-demos/reanimated-basic/timing-move",
+    icon: "timer",
+    desc: "withTiming default vs custom duration and Easing.bezier curve.",
   },
   {
-    title: 'Slide Up',
-    route: '/expo-demos/anim-interpolate/slide-up',
-    icon: 'arrow-upward',
-    desc: 'Single Animated.Value drives both opacity and translateY via interpolate.',
+    title: "Spring Config",
+    route: "/expo-demos/reanimated-basic/spring-config",
+    icon: "tune",
+    desc: "withSpring with different damping, stiffness, and mass configs.",
   },
   {
-    title: 'Pop In',
-    route: '/expo-demos/anim-interpolate/pop-in',
-    icon: 'zoom-out-map',
-    desc: 'Multi-segment interpolate: 0→1.2 overshoot then settle to 1 for pop-in effect.',
+    title: "Decay Drag",
+    route: "/expo-demos/reanimated-basic/decay-drag",
+    icon: "swipe",
+    desc: "withDecay inertial momentum after drag with clamp range limit.",
   },
 ];
 
-export default function AnimInterpolateIndex() {
+export default function ReanimatedBasicIndex() {
   const router = useRouter();
 
   return (
@@ -45,10 +45,10 @@ export default function AnimInterpolateIndex() {
     >
       <View className="items-center gap-2 pt-4 pb-2">
         <Text className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-          Interpolation
+          Reanimated Basic
         </Text>
         <Text className="text-center text-sm text-gray-500 dark:text-gray-400">
-          Map Animated.Value to colors, angles, and custom ranges.
+          Core concepts: shared values, animated styles, and spring animations.
         </Text>
       </View>
 
@@ -74,13 +74,6 @@ export default function AnimInterpolateIndex() {
           </View>
         </Pressable>
       ))}
-
-      <View className="mt-2 rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
-        <Text className="text-xs text-blue-700 dark:text-blue-300">
-          interpolate() 将一个 Animated.Value 的变化范围映射到另一个范围，
-          支持数字、颜色字符串、角度字符串等多种输出格式。
-        </Text>
-      </View>
     </ScrollView>
   );
 }

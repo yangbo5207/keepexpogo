@@ -7,14 +7,12 @@ export default function AnimBasicLayout() {
       screenOptions={{
         headerStyle: { backgroundColor: '#f97316' },
         headerTintColor: '#fff',
+        headerLeft: () => <DemoBackButton />,
       }}
     >
       <Stack.Screen
         name="index"
-        options={{
-          title: 'Basic Animations',
-          headerLeft: () => <DemoBackButton />,
-        }}
+        options={{ title: 'Basic Animations' }}
       />
       <Stack.Screen
         name="fade"

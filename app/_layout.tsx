@@ -5,6 +5,7 @@ import {
 } from "@react-navigation/native";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
 import "./global.css";
 
@@ -18,18 +19,26 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="expo-demos" options={{ headerShown: false }} />
-        <Stack.Screen name="learn/[categoryId]" />
-        <Stack.Screen name="learn/demo/[demoId]" />
-        <Stack.Screen
-          name="modal"
-          options={{ presentation: "modal", title: "Modal" }}
-        />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider
+        value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+      >
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="expo-demos" options={{ headerShown: false }} />
+          <Stack.Screen name="learn/[categoryId]" />
+          <Stack.Screen name="learn/article/[articleId]" />
+          <Stack.Screen name="learn/demo/[demoId]" />
+          <Stack.Screen name="settings" />
+          <Stack.Screen name="components-gallery" />
+          <Stack.Screen name="component-demos/button" />
+          <Stack.Screen
+            name="modal"
+            options={{ presentation: "modal", title: "Modal" }}
+          />
+        </Stack>
+        <StatusBar style="auto" />
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }

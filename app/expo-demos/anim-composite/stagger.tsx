@@ -1,12 +1,12 @@
-import { useRef, useCallback } from 'react';
-import { Animated, Pressable, Text, View } from 'react-native';
+import { useRef } from "react";
+import { Animated, Pressable, Text, View } from "react-native";
 
 const ITEMS = Array.from({ length: 8 }, (_, i) => `List Item ${i + 1}`);
 
 export default function StaggerScreen() {
   const anims = useRef(ITEMS.map(() => new Animated.Value(0))).current;
 
-  const play = useCallback(() => {
+  const play = () => {
     anims.forEach((a) => a.setValue(0));
 
     Animated.stagger(
@@ -16,10 +16,10 @@ export default function StaggerScreen() {
           toValue: 1,
           duration: 400,
           useNativeDriver: true,
-        })
-      )
+        }),
+      ),
     ).start();
-  }, [anims]);
+  };
 
   return (
     <View className="flex-1 bg-white dark:bg-[#151718]">
@@ -55,15 +55,10 @@ export default function StaggerScreen() {
           className="items-center rounded-xs bg-orange-500 py-3 active:bg-orange-600"
           onPress={play}
         >
-          <Text className="text-base font-semibold text-white">Replay Stagger</Text>
-        </Pressable>
-
-        <View className="rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
-          <Text className="text-xs text-blue-700 dark:text-blue-300">
-            Animated.stagger(80, [...]) 让每个动画间隔 80ms 启动。配合 interpolate
-            将 opacity 和 translateX 绑定到同一个 Animated.Value，实现淡入 + 滑入效果。
+          <Text className="text-base font-semibold text-white">
+            Replay Stagger
           </Text>
-        </View>
+        </Pressable>
       </View>
     </View>
   );

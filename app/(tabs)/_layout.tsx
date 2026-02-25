@@ -1,8 +1,8 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
+import { Home, Compass, BookOpen, User } from 'lucide-react-native';
 
 import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
@@ -20,21 +20,28 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Home size={24} stroke={color} />,
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Compass size={24} stroke={color} />,
         }}
       />
       <Tabs.Screen
         name="learn"
         options={{
           title: 'Learn',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="book.fill" color={color} />,
+          tabBarIcon: ({ color }) => <BookOpen size={24} stroke={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <User size={24} stroke={color} />,
         }}
       />
     </Tabs>
