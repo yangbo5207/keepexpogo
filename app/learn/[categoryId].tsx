@@ -1,22 +1,30 @@
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { ChevronRight } from "lucide-react-native";
 import React from "react";
-import { FlatList, Pressable, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 
+import { Card } from "@/components/ui/card";
 import { IconSymbol } from "@/components/ui/icon-symbol";
+import { ListRow, ListRowGroup } from "@/components/ui/list-row";
 import { getCategoryById } from "@/content/learn";
-
-const ACCENT = "#0a7ea4";
+import { useColorScheme } from "@/hooks/use-color-scheme";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function CategoryScreen() {
   const { categoryId } = useLocalSearchParams<{ categoryId: string }>();
   const router = useRouter();
-  const category = getCategoryById(categoryId);
+  const id = Array.isArray(categoryId) ? categoryId[0] : categoryId;
+  const category = id ? getCategoryById(id) : undefined;
+  const theme = useColorScheme() ?? "light";
+  const iconColor = theme === "dark" ? "#e6d5ce" : "#6e4d38";
+  const arrowColor = theme === "dark" ? "#9e978a" : "#b3a57e";
+  const insets = useSafeAreaInsets();
 
   if (!category) {
     return (
-      <View className="flex-1 items-center justify-center bg-white dark:bg-[#151718]">
+      <View className="flex-1 items-center justify-center bg-cream-50 dark:bg-night-800">
         <Stack.Screen options={{ title: "Not Found" }} />
-        <Text className="text-gray-900 dark:text-gray-100">
+        <Text className="text-cream-900 dark:text-night-50">
           Category not found.
         </Text>
       </View>
@@ -24,59 +32,50 @@ export default function CategoryScreen() {
   }
 
   return (
-    <View className="flex-1 bg-white dark:bg-[#151718]">
+    <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800 p-4">
       <Stack.Screen options={{ title: category.title }} />
-      <FlatList
-        data={category.articles}
-        keyExtractor={(item) => item.id}
-        contentContainerClassName="p-4 pb-10"
-        ListHeaderComponent={
-          <View className="mb-6 pt-2">
-            <View className="mb-3 self-start rounded-full bg-cyan-700/10 px-2.5 py-1 dark:bg-cyan-400/15">
-              <Text className="text-xs font-semibold text-cyan-700 dark:text-cyan-400">
-                {category.articles.length} article
-                {category.articles.length !== 1 ? "s" : ""}
-              </Text>
-            </View>
-            <Text className="mb-1.5 text-[28px] font-bold leading-tight text-gray-900 dark:text-gray-100">
-              {category.title}
-            </Text>
-            <Text className="text-[15px] leading-snug text-gray-500 dark:text-gray-400">
-              {category.description}
-            </Text>
-          </View>
-        }
-        renderItem={({ item: article, index }) => (
-          <Pressable
-            className="flex-row items-center gap-3 rounded-2xl bg-neutral-100 p-4 active:bg-neutral-200 dark:bg-neutral-800/80 dark:active:bg-neutral-700/80"
+      <Card className="mb-6">
+        <Card.Header>
+          <Card.Icon>
+            <IconSymbol
+              name={category.icon as any}
+              size={18}
+              color={iconColor}
+            />
+          </Card.Icon>
+          <Card.Eyebrow>{category.articles.length} 篇文章</Card.Eyebrow>
+        </Card.Header>
+        <Card.Title>{category.title}</Card.Title>
+        <Card.Description>{category.description}</Card.Description>
+      </Card>
+
+      <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
+        文章列表
+      </Text>
+      <ListRowGroup className="mt-4">
+        {category.articles.map((article, index) => (
+          <ListRow
+            key={article.id}
+            title={article.title}
+            description={article.description}
+            left={
+              <View className="h-8 w-8 items-center justify-center rounded-full bg-primary-200 dark:bg-primary-800">
+                <Text className="text-xs font-semibold text-primary-700 dark:text-primary-200">
+                  {String(index + 1).padStart(2, "0")}
+                </Text>
+              </View>
+            }
+            right={<ChevronRight size={18} color={arrowColor} />}
             onPress={() =>
               router.push({
                 pathname: "/learn/article/[articleId]",
                 params: { articleId: article.id },
               })
             }
-          >
-            <View
-              className="h-9 w-9 items-center justify-center rounded-button"
-              style={{ backgroundColor: ACCENT }}
-            >
-              <Text className="text-sm font-bold text-white">
-                {String(index + 1).padStart(2, "0")}
-              </Text>
-            </View>
-            <View className="flex-1 gap-0.5">
-              <Text className="text-[17px] font-semibold leading-snug text-gray-900 dark:text-gray-100">
-                {article.title}
-              </Text>
-              <Text className="text-[13px] leading-snug text-gray-500 dark:text-gray-400">
-                {article.description}
-              </Text>
-            </View>
-            <IconSymbol name="chevron.right" size={18} color="#9ca3af" />
-          </Pressable>
-        )}
-        ItemSeparatorComponent={() => <View className="h-3" />}
-      />
-    </View>
+          />
+        ))}
+      </ListRowGroup>
+      <View style={{ height: insets.bottom }} />
+    </ScrollView>
   );
 }

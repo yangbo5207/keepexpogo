@@ -1,112 +1,122 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { Link, useRouter } from "expo-router";
+import {
+  ArrowRight,
+  BookOpen,
+  Compass,
+  Layers,
+  Palette,
+} from "lucide-react-native";
+import React from "react";
+import { Text, View } from "react-native";
 
-import { Collapsible } from '@/components/ui/collapsible';
-import { ExternalLink } from '@/components/external-link';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Fonts } from '@/constants/theme';
+import { CollapsibleHeaderScrollView } from "@/components/ui/collapsible-header-scroll-view";
+import { ListRow, ListRowGroup } from "@/components/ui/list-row";
+import { useColorScheme } from "@/hooks/use-color-scheme";
 
-export default function TabTwoScreen() {
+const quickLinks = [
+  {
+    title: "组件演示",
+    description: "进入组件画廊与交互示例",
+    href: "/components-gallery" as const,
+    icon: Layers,
+  },
+  {
+    title: "动效集合",
+    description: "Reanimated 动画 demo 快速入口",
+    href: "/expo-demos/reanimated-basic" as const,
+    icon: Compass,
+  },
+  {
+    title: "学习中心",
+    description: "阅读主题与实现细节",
+    href: "/learn/1" as const,
+    icon: BookOpen,
+  },
+];
+
+export default function ExploreScreen() {
+  const theme = useColorScheme() ?? "light";
+  const router = useRouter();
+  const iconColor = theme === "dark" ? "#e6d5ce" : "#6e4d38";
+  const arrowColor = theme === "dark" ? "#9e978a" : "#b3a57e";
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={
-        <IconSymbol
-          size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
-          style={styles.headerImage}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText
-          type="title"
-          style={{
-            fontFamily: Fonts.rounded,
-          }}>
-          Explore
-        </ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image
-          source={require('@/assets/images/react-logo.png')}
-          style={{ width: 100, height: 100, alignSelf: 'center' }}
-        />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user&apos;s current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful{' '}
-          <ThemedText type="defaultSemiBold" style={{ fontFamily: Fonts.mono }}>
-            react-native-reanimated
-          </ThemedText>{' '}
-          library to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+    <View className="flex-1 bg-cream-50 dark:bg-night-800">
+      <CollapsibleHeaderScrollView
+        title="主题与体验"
+        subtitle="Explore"
+        containerClassName="bg-cream-50 dark:bg-night-800"
+        headerBackgroundClassName="bg-cream-100/95 dark:bg-night-700/95"
+        className="px-5 pb-14"
+      >
+        <View className="my-8 rounded-2xl border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
+          <View className="flex-row items-center">
+            <View className="mr-3 rounded-full bg-secondary-100 p-2 dark:bg-night-600">
+              <Palette size={18} color={iconColor} />
+            </View>
+            <Text className="text-sm font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
+              设计要点
+            </Text>
+          </View>
+          <Text className="mt-3 text-xl font-semibold text-cream-900 dark:text-night-50">
+            低饱和、柔质感、轻动效
+          </Text>
+          <Text className="mt-2 text-sm leading-6 text-cream-700 dark:text-night-200">
+            以温润的奶白为基底，通过轻微的阴影与弹簧动画营造克制的高级质感。
+          </Text>
+          <Link
+            href="/learn/1"
+            className="mt-4 self-start rounded-full border border-cream-300 bg-cream-200 px-4 py-2 dark:border-night-500 dark:bg-night-600"
+          >
+            <Text className="text-sm font-semibold text-cream-800 dark:text-night-50">
+              阅读主题说明
+            </Text>
+          </Link>
+        </View>
+
+        <View className="mb-4">
+          <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
+            快速入口
+          </Text>
+          <View className="mt-4 gap-3">
+            {quickLinks.map((item) => (
+              <ListRow
+                key={item.title}
+                title={item.title}
+                description={item.description}
+                left={
+                  <View className="rounded-full bg-secondary-100 p-2 dark:bg-night-600">
+                    <item.icon size={18} color={iconColor} />
+                  </View>
+                }
+                right={<ArrowRight size={18} color={arrowColor} />}
+                onPress={() => router.push(item.href)}
+                className="rounded-2xl border border-cream-200 dark:border-night-600"
+              />
+            ))}
+          </View>
+        </View>
+
+        <View className="mt-6">
+          <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
+            推荐动作
+          </Text>
+          <ListRowGroup className="mt-4">
+            <ListRow
+              title="查看 Switch 交互"
+              description="轻微弹簧切换与暗色适配"
+              right={<ArrowRight size={18} color={arrowColor} />}
+              onPress={() => router.push("/component-demos/switch")}
+            />
+            <ListRow
+              title="体验 ListRow 细节"
+              description="分组结构与按压渐变"
+              right={<ArrowRight size={18} color={arrowColor} />}
+              onPress={() => router.push("/components-gallery")}
+            />
+          </ListRowGroup>
+        </View>
+      </CollapsibleHeaderScrollView>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-});

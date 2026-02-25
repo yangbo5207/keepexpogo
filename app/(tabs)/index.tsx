@@ -1,108 +1,126 @@
-import { Image } from "expo-image";
-import { Platform, StyleSheet, Text } from "react-native";
-
-import { HelloWave } from "@/components/hello-wave";
-import ParallaxScrollView from "@/components/parallax-scroll-view";
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
+import { CollapsibleHeaderScrollView } from "@/components/ui/collapsible-header-scroll-view";
+import { useColorScheme } from "@/hooks/use-color-scheme";
 import { Link } from "expo-router";
+import { ArrowRight, BookOpen, Compass, Sparkles } from "lucide-react-native";
+import React from "react";
+import { Text, View } from "react-native";
 
-export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
-      headerImage={
-        <Image
-          source={require("@/assets/images/partial-react-logo.png")}
-          style={styles.reactLogo}
-        />
-      }
-    >
-      <Text className="text-red-500 text-2xl font-bold">Hello</Text>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit2222{" "}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{" "}
-          to see changes. Press{" "}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: "cmd + d",
-              android: "cmd + m",
-              web: "F12",
-            })}
-          </ThemedText>{" "}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction
-              title="Action"
-              icon="cube"
-              onPress={() => alert("Action pressed")}
-            />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert("Share pressed")}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert("Delete pressed")}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+const highlightCards = [
+  {
+    title: "组件画廊",
+    description: "查看所有 UI 组件与交互示例",
+    href: "/components-gallery" as const,
+    icon: GridIcon,
+  },
+  {
+    title: "动画示例",
+    description: "体验 Reanimated 驱动的动效",
+    href: "/expo-demos/reanimated-basic" as const,
+    icon: Sparkles,
+  },
+  {
+    title: "学习中心",
+    description: "阅读与项目相关的专题内容",
+    href: "/learn/1" as const,
+    icon: BookOpen,
+  },
+];
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">
-            npm run reset-project
-          </ThemedText>{" "}
-          to get a fresh <ThemedText type="defaultSemiBold">app</ThemedText>{" "}
-          directory. This will move the current{" "}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{" "}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
+function GridIcon({ size, color }: { size: number; color: string }) {
+  return <Compass size={size} color={color} />;
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: "absolute",
-  },
-});
+export default function HomeScreen() {
+  const theme = useColorScheme() ?? "light";
+  const iconColor = theme === "dark" ? "#e6d5ce" : "#735047";
+  const arrowColor = theme === "dark" ? "#9e978a" : "#b3a57e";
+
+  return (
+    <View className="flex-1 bg-cream-50 dark:bg-night-800">
+      <CollapsibleHeaderScrollView
+        title="Creamy UI Library"
+        subtitle="Keep Expogo"
+        containerClassName="bg-cream-50 dark:bg-night-800"
+        headerBackgroundClassName="bg-cream-100/95 dark:bg-night-700/95"
+        className="px-5 pb-14"
+      >
+        <View className="my-8 rounded-2xl border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
+          <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
+            今日焦点
+          </Text>
+          <Text className="mt-3 text-xl font-semibold text-cream-900 dark:text-night-50">
+            全新 Switch 与 ListRow 交互
+          </Text>
+          <Text className="mt-2 text-sm leading-5 text-cream-700 dark:text-night-200">
+            使用 spring
+            动画的开关和可分组的列表行，适配暗色模式，并提供轻微弹簧反馈。
+          </Text>
+          <Link
+            href="/component-demos/switch"
+            className="mt-4 self-start rounded-full bg-primary-500 px-4 py-2"
+          >
+            <Text className="text-sm font-semibold text-white">查看演示</Text>
+          </Link>
+        </View>
+
+        <View className="mb-4">
+          <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
+            快速入口
+          </Text>
+          <View className="mt-4 gap-4">
+            {highlightCards.map((card) => (
+              <Link
+                key={card.title}
+                href={card.href}
+                className="rounded-2xl border border-cream-200 bg-cream-100 p-4 dark:border-night-600 dark:bg-night-700"
+              >
+                <View className="flex-row items-center">
+                  <View className="mr-3 rounded-full bg-secondary-100 p-2 dark:bg-night-600">
+                    <card.icon size={18} color={iconColor} />
+                  </View>
+                  <View className="flex-1">
+                    <Text className="text-base font-semibold text-cream-900 dark:text-night-50">
+                      {card.title}
+                    </Text>
+                    <Text className="mt-1 text-sm text-cream-700 dark:text-night-200">
+                      {card.description}
+                    </Text>
+                  </View>
+                  <ArrowRight size={18} color={arrowColor} />
+                </View>
+              </Link>
+            ))}
+          </View>
+        </View>
+
+        <View className="mt-6 rounded-2xl border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
+          <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
+            导航提示
+          </Text>
+          <Text className="mt-3 text-sm leading-6 text-cream-700 dark:text-night-200">
+            使用底部导航进入 Explore 了解主题细节，进入 Profile
+            管理设置与组件演示。
+          </Text>
+          <View className="mt-4 flex-row gap-3">
+            <View className="flex-1 rounded-xl border border-cream-300 bg-cream-200 px-3 py-2 dark:border-night-500 dark:bg-night-600">
+              <Text className="text-xs font-semibold uppercase text-cream-700 dark:text-night-200">
+                Explore
+              </Text>
+              <Text className="mt-1 text-sm text-cream-800 dark:text-night-50">
+                主题指南
+              </Text>
+            </View>
+            <View className="flex-1 rounded-xl border border-cream-300 bg-cream-200 px-3 py-2 dark:border-night-500 dark:bg-night-600">
+              <Text className="text-xs font-semibold uppercase text-cream-700 dark:text-night-200">
+                Profile
+              </Text>
+              <Text className="mt-1 text-sm text-cream-800 dark:text-night-50">
+                设置中心
+              </Text>
+            </View>
+          </View>
+        </View>
+      </CollapsibleHeaderScrollView>
+    </View>
+  );
+}

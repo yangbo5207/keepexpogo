@@ -1,39 +1,44 @@
-import React, { Suspense } from 'react';
-import { ActivityIndicator, View, Text } from 'react-native';
-import { useLocalSearchParams, Stack } from 'expo-router';
+import React, { Suspense } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
+import { Stack, useLocalSearchParams } from "expo-router";
 
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-import { getDemoById } from '@/content/learn';
+import { Card } from "@/components/ui/card";
+import { getDemoById } from "@/content/learn";
+import { useColorScheme } from "@/hooks/use-color-scheme";
 
 export default function DemoScreen() {
   const { demoId } = useLocalSearchParams<{ demoId: string }>();
-  const theme = useColorScheme() ?? 'light';
-  const demo = getDemoById(demoId);
+  const theme = useColorScheme() ?? "light";
+  const id = Array.isArray(demoId) ? demoId[0] : demoId;
+  const demo = id ? getDemoById(id) : undefined;
 
   if (!demo || !demo.component) {
     return (
-      <View className="flex-1 items-center justify-center bg-white dark:bg-[#151718]">
-        <Stack.Screen options={{ title: 'Not Found' }} />
-        <Text className="text-gray-900 dark:text-gray-100">Demo not found.</Text>
+      <View className="flex-1 items-center justify-center bg-cream-50 dark:bg-night-800">
+        <Stack.Screen options={{ title: "Not Found" }} />
+        <Text className="text-cream-900 dark:text-night-50">Demo not found.</Text>
       </View>
     );
   }
 
   const DemoComponent = React.lazy(demo.component);
+  const spinnerColor = theme === "dark" ? "#e6d5ce" : "#6e4d38";
 
   return (
-    <View className="flex-1 bg-white dark:bg-[#151718]">
+    <View className="flex-1 bg-cream-50 dark:bg-night-800">
       <Stack.Screen options={{ title: demo.title }} />
       <Suspense
         fallback={
-          <View className="flex-1 items-center justify-center gap-3">
-            <ActivityIndicator size="large" color={Colors[theme].tint} />
-            <Text className="text-sm text-gray-500 dark:text-gray-400">
-              Loading demo...
-            </Text>
+          <View className="flex-1 items-center justify-center px-6">
+            <Card className="w-full items-center">
+              <ActivityIndicator size="large" color={spinnerColor} />
+              <Text className="mt-3 text-sm text-cream-700 dark:text-night-200">
+                Loading demo...
+              </Text>
+            </Card>
           </View>
-        }>
+        }
+      >
         <DemoComponent />
       </Suspense>
     </View>

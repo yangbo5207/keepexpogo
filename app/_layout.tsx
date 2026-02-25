@@ -32,6 +32,7 @@ export default function RootLayout() {
           <Stack.Screen name="settings" />
           <Stack.Screen name="components-gallery" />
           <Stack.Screen name="component-demos/button" />
+          <Stack.Screen name="component-demos/switch" />
           <Stack.Screen
             name="modal"
             options={{ presentation: "modal", title: "Modal" }}

@@ -1,57 +1,83 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import { useRouter } from 'expo-router';
-import { IconSymbol } from '@/components/ui/icon-symbol';
+import { useRouter } from "expo-router";
+import {
+  ChevronRight,
+  LayoutGrid,
+  Settings,
+  Shield,
+} from "lucide-react-native";
+import { useColorScheme } from "nativewind";
+import React from "react";
+import { Text, View } from "react-native";
+
+import { Card } from "@/components/ui/card";
+import { CollapsibleHeaderScrollView } from "@/components/ui/collapsible-header-scroll-view";
+import { ListRow, ListRowGroup } from "@/components/ui/list-row";
+import { Switch } from "@/components/ui/switch";
 
 const menuItems = [
   {
-    label: '设置',
-    icon: 'house.fill' as const,
-    route: '/settings' as const,
+    label: "设置",
+    icon: Settings,
+    route: "/settings" as const,
   },
   {
-    label: '组件',
-    icon: 'chevron.left.forwardslash.chevron.right' as const,
-    route: '/components-gallery' as const,
+    label: "组件",
+    icon: LayoutGrid,
+    route: "/components-gallery" as const,
   },
 ];
 
 export default function ProfileScreen() {
   const router = useRouter();
+  const { colorScheme, setColorScheme } = useColorScheme();
+  const isDark = (colorScheme ?? "light") === "dark";
+  const iconColor = isDark ? "#9e978a" : "#b3a57e";
+  const accentColor = isDark ? "#e6d5ce" : "#6e4d38";
 
   return (
-    <View className="flex-1 bg-white dark:bg-[#151718]">
-      <ScrollView contentContainerClassName="p-4 pb-8">
-        <View className="mb-4 pt-12">
-          <Text className="text-3xl font-bold text-gray-900 dark:text-gray-100">
-            Profile
-          </Text>
-          <Text className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-            Settings and project components.
-          </Text>
-        </View>
+    <View className="flex-1 bg-cream-50 dark:bg-night-800">
+      <CollapsibleHeaderScrollView
+        title="个人设置"
+        subtitle="Profile"
+        containerClassName="bg-cream-50 dark:bg-night-800"
+        headerBackgroundClassName="bg-cream-100/95 dark:bg-night-700/95"
+        className="px-5 pb-10"
+      >
+        <Card className="my-8">
+          <Card.Header>
+            <Card.Icon>
+              <Shield size={16} color={accentColor} />
+            </Card.Icon>
+            <Card.Eyebrow>外观</Card.Eyebrow>
+          </Card.Header>
+          <Card.Title>暗黑模式</Card.Title>
+          <Card.Description>手动切换主题外观，适配夜间阅读。</Card.Description>
+          <View className="mt-4 flex-row items-center justify-between">
+            <Text className="text-sm font-semibold text-cream-800 dark:text-night-100">
+              当前模式
+            </Text>
+            <Switch
+              value={isDark}
+              onValueChange={(next) => setColorScheme(next ? "dark" : "light")}
+            />
+          </View>
+        </Card>
 
-        <View className="mt-2 overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
-          {menuItems.map((item, index) => (
-            <TouchableOpacity
+        <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
+          导航入口
+        </Text>
+        <ListRowGroup className="mt-4">
+          {menuItems.map((item) => (
+            <ListRow
               key={item.label}
-              className={`flex-row items-center px-4 py-4 ${
-                index < menuItems.length - 1
-                  ? 'border-b border-gray-200 dark:border-gray-700'
-                  : ''
-              }`}
-              activeOpacity={0.6}
+              title={item.label}
+              left={<item.icon size={18} color={iconColor} />}
+              right={<ChevronRight size={18} color={iconColor} />}
               onPress={() => router.push(item.route)}
-            >
-              <IconSymbol name={item.icon} size={22} color="#9ca3af" />
-              <Text className="ml-3 flex-1 text-base text-gray-900 dark:text-gray-100">
-                {item.label}
-              </Text>
-              <IconSymbol name="chevron.right" size={18} color="#9ca3af" />
-            </TouchableOpacity>
+            />
           ))}
-        </View>
-      </ScrollView>
+        </ListRowGroup>
+      </CollapsibleHeaderScrollView>
     </View>
   );
 }
