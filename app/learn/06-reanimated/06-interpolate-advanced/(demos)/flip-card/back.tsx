@@ -38,3 +38,5 @@ export function FlipCardBack({ style }: FlipCardFaceProps) {
     </Animated.View>
   );
 }
+
+export default FlipCardBack;

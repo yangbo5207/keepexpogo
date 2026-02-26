@@ -1,6 +1,7 @@
 import { Image, Text, View } from "react-native";
 import Animated, { Extrapolation, interpolate, interpolateColor, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { DemoBackButton } from "@/components/demo-back-button";
 
 const IMG_HEIGHT = 280;
 const BASE_SCALE = 1.35;
@@ -69,8 +70,14 @@ export default function ParallaxScrollScreen() {
         ]}
         className="absolute left-0 right-0 top-0 z-10 border-b"
       >
-        <View className="h-14 items-center justify-center">
-          <Text className="text-base font-semibold text-cream-900 dark:text-night-50">Details</Text>
+        <View className="h-14 flex-row items-center">
+          <View className="w-12 items-center justify-center">
+            <DemoBackButton />
+          </View>
+          <View className="flex-1 items-center">
+            <Text className="text-base font-semibold text-cream-900 dark:text-night-50">Details</Text>
+          </View>
+          <View className="w-12" />
         </View>
       </Animated.View>
     </View>

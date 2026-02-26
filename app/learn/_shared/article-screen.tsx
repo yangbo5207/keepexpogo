@@ -69,3 +69,5 @@ export function ArticleScreenBase({ categoryId: categoryIdOverride, articleId: a
     </View>
   );
 }
+
+export default ArticleScreenBase;

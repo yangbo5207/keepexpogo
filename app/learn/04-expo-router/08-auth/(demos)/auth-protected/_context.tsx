@@ -55,3 +55,7 @@ export function ProtectedAuthProvider({ children }: { children: ReactNode }) {
 export function useProtectedAuth() {
   return useContext(AuthContext);
 }
+
+export default function AuthProtectedContextRoute() {
+  return null;
+}

@@ -46,3 +46,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 export function useAuth() {
   return useContext(AuthContext);
 }
+
+export default function AuthFlowContextRoute() {
+  return null;
+}

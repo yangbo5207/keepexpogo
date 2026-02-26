@@ -73,3 +73,5 @@ export function CategoryScreenBase({ categoryId: categoryIdOverride }: { categor
     </ScrollView>
   );
 }
+
+export default CategoryScreenBase;
