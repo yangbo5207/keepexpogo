@@ -1,1 +1,1 @@
-export { default } from "@/content/learn/03-styling/02-theme/CustomColors";
+export { default } from "@/app/learn/_content/03-styling/02-theme/CustomColors";

@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { CollapsibleHeaderScrollView } from "@/components/ui/collapsible-header-scroll-view";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { ListRow, ListRowGroup } from "@/components/ui/list-row";
-import { categories } from "@/content/learn";
+import { categories } from "@/app/learn/_content";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
 export default function LearnScreen() {

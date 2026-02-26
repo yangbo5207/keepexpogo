@@ -1,1 +1,1 @@
-export { default } from "@/content/learn/01-react-basics/01-jsx-intro/Counter";
+export { default } from "@/app/learn/_content/01-react-basics/01-jsx-intro/Counter";

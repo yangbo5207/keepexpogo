@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react-native";
 import { Card } from "@/components/ui/card";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { ListRow, ListRowGroup } from "@/components/ui/list-row";
-import { getCategoryById } from "@/content/learn";
+import { getCategoryById } from "@/app/learn/_content";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 

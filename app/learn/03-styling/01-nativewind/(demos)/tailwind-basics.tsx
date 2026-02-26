@@ -1,1 +1,1 @@
-export { default } from "@/content/learn/03-styling/01-nativewind/TailwindBasics";
+export { default } from "@/app/learn/_content/03-styling/01-nativewind/TailwindBasics";

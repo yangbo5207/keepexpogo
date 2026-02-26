@@ -1,1 +1,1 @@
-export { default } from "@/content/learn/03-styling/04-components/StyledButtons";
+export { default } from "@/app/learn/_content/03-styling/04-components/StyledButtons";

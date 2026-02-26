@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react-native";
 
 import { Card } from "@/components/ui/card";
 import { ListRow, ListRowGroup } from "@/components/ui/list-row";
-import { getCategoryById } from "@/content/learn";
+import { getCategoryById } from "@/app/learn/_content";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
 export function ArticleScreenBase({ categoryId: categoryIdOverride, articleId: articleIdOverride }: { categoryId?: string; articleId?: string }) {
