@@ -9,19 +9,19 @@ const article: Article = {
       id: 'expo-router__tabs__basic-tabs',
       title: 'Basic Tabs',
       description: 'Three-tab layout with icons, labels, and badge configuration.',
-      route: '/expo-demos/tabs-basic',
+      route: '/learn/04-expo-router/02-tabs/tabs-basic',
     },
     {
       id: 'expo-router__tabs__custom-tab-bar',
       title: 'Custom Tab Bar',
       description: 'Fully custom tab bar UI with animated indicator and styled layout.',
-      route: '/expo-demos/tabs-custom',
+      route: '/learn/04-expo-router/02-tabs/tabs-custom',
     },
     {
       id: 'expo-router__tabs__hidden-routes',
       title: 'Hidden Routes',
       description: 'Hide specific tabs from the tab bar while keeping them navigable.',
-      route: '/expo-demos/tabs-hidden',
+      route: '/learn/04-expo-router/02-tabs/tabs-hidden',
     },
   ],
 };

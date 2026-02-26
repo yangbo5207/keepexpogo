@@ -16,10 +16,14 @@ export interface ListRowProps
   right?: React.ReactNode;
   showDivider?: boolean;
   variant?: "default" | "highlight" | "danger";
+  active?: boolean;
   autoTintRight?: boolean;
   autoTintLeft?: boolean;
   radius?: number;
   className?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
+  asChild?: boolean;
 }
 
 export function ListRow({
@@ -29,11 +33,15 @@ export function ListRow({
   right,
   showDivider = false,
   variant = "default",
+  active = false,
   autoTintRight = false,
   autoTintLeft = false,
   radius = 16,
   disabled = false,
   className,
+  titleClassName,
+  descriptionClassName,
+  asChild = false,
   onPressIn,
   onPressOut,
   ...rest
@@ -41,14 +49,17 @@ export function ListRow({
   const theme = useColorScheme() ?? "light";
   const pressed = useSharedValue(0);
 
+  const effectiveVariant =
+    active && variant === "default" ? "highlight" : variant;
+
   const colors = useMemo(() => {
-    if (variant === "danger") {
+    if (effectiveVariant === "danger") {
       if (theme === "dark") {
         return { base: "#25221c", pressed: "#6a2c23" };
       }
       return { base: "#fbf8f0", pressed: "#fbe8e4" };
     }
-    if (variant === "highlight") {
+    if (effectiveVariant === "highlight") {
       if (theme === "dark") {
         return { base: "#25221c", pressed: "#463226" };
       }
@@ -58,7 +69,7 @@ export function ListRow({
       return { base: "#25221c", pressed: "#302c25" };
     }
     return { base: "#fbf8f0", pressed: "#f5efdf" };
-  }, [theme, variant]);
+  }, [theme, effectiveVariant]);
 
   const handlePressIn = useCallback(
     (e: any) => {
@@ -80,19 +91,19 @@ export function ListRow({
     backgroundColor: interpolateColor(
       pressed.value,
       [0, 1],
-      [colors.base, colors.pressed],
+      [active ? colors.pressed : colors.base, colors.pressed],
     ),
   }));
 
   const rightTint = useMemo(() => {
-    if (variant === "danger") {
+    if (effectiveVariant === "danger") {
       return theme === "dark" ? "#e78574" : "#c04a37";
     }
-    if (variant === "highlight") {
+    if (effectiveVariant === "highlight") {
       return theme === "dark" ? "#ba9b82" : "#6e4d38";
     }
     return theme === "dark" ? "#9e978a" : "#b3a57e";
-  }, [theme, variant]);
+  }, [theme, effectiveVariant]);
 
   const leftTint = rightTint;
   const leftEl =
@@ -108,6 +119,11 @@ export function ListRow({
         })
       : right;
 
+  const pressableProps = { ...rest } as PressableProps & { href?: string };
+  if (asChild && "href" in pressableProps) {
+    delete pressableProps.href;
+  }
+
   return (
     <Animated.View
       style={[
@@ -120,30 +136,30 @@ export function ListRow({
         onPressOut={handlePressOut}
         disabled={disabled}
         className={`flex-row items-center px-4 py-4 ${showDivider ? "border-b border-cream-300 dark:border-night-500" : ""} ${disabled ? "opacity-50" : ""} ${className ?? ""}`}
-        {...rest}
+        {...pressableProps}
       >
         {leftEl ? <View className="mr-3">{leftEl}</View> : null}
         <View className="flex-1">
           <Text
             className={`text-base ${
-              variant === "danger"
+              effectiveVariant === "danger"
                 ? "text-danger-600 dark:text-danger-300"
-                : variant === "highlight"
+                : effectiveVariant === "highlight"
                   ? "text-primary-700 dark:text-primary-300"
                   : "text-cream-900 dark:text-night-50"
-            }`}
+            } ${titleClassName ?? ""}`}
           >
             {title}
           </Text>
           {description ? (
             <Text
               className={`mt-1 text-sm ${
-                variant === "danger"
+                effectiveVariant === "danger"
                   ? "text-danger-500 dark:text-danger-300"
-                : variant === "highlight"
+                : effectiveVariant === "highlight"
                     ? "text-primary-600 dark:text-primary-300"
                     : "text-cream-700 dark:text-night-200"
-              }`}
+              } ${descriptionClassName ?? ""}`}
             >
               {description}
             </Text>

@@ -9,19 +9,19 @@ const article: Article = {
       id: 'expo-router__dynamic__route-params',
       title: 'Route Params',
       description: 'List page navigating to detail with dynamic [id] parameter.',
-      route: '/expo-demos/dynamic-params',
+      route: '/learn/04-expo-router/05-dynamic-routes/dynamic-params',
     },
     {
       id: 'expo-router__dynamic__search-query',
       title: 'Search Query',
       description: 'Search page passing ?q=keyword&category=tech query parameters.',
-      route: '/expo-demos/dynamic-search',
+      route: '/learn/04-expo-router/05-dynamic-routes/dynamic-search',
     },
     {
       id: 'expo-router__dynamic__catch-all-route',
       title: 'Catch All Route',
       description: 'Multi-segment path /docs/api/v2 parsed into breadcrumb navigation.',
-      route: '/expo-demos/dynamic-catchall',
+      route: '/learn/04-expo-router/05-dynamic-routes/dynamic-catchall',
     },
   ],
 };

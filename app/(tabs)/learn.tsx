@@ -56,12 +56,7 @@ export default function LearnScreen() {
                 />
               }
               right={<ChevronRight size={18} color={arrowColor} />}
-              onPress={() =>
-                router.push({
-                  pathname: "/learn/[categoryId]",
-                  params: { categoryId: item.id },
-                })
-              }
+              onPress={() => router.push(`/learn/${item.id}` as any)}
             />
           ))}
         </ListRowGroup>

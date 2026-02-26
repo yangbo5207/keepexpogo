@@ -25,6 +25,11 @@ const components: ComponentItem[] = [
     description: "支持 spring 动画与暗色模式的开关组件",
     demo: "/component-demos/switch",
   },
+  {
+    name: "Chip",
+    description: "轻量标签/筛选组件，支持选中态与多种样式",
+    demo: "/component-demos/chip",
+  },
   { name: "ThemedText", description: "支持主题切换的文本组件" },
   { name: "ThemedView", description: "支持主题切换的视图容器" },
   { name: "HelloWave", description: "带动画效果的挥手 emoji 组件" },

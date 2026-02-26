@@ -9,6 +9,7 @@ const article: Article = {
       id: 'navigation__stack-nav__basic-stack',
       title: 'Basic Stack',
       description: 'A simple demonstration of stack-based navigation flow.',
+      route: '/learn/02-navigation/01-stack-nav/basic-stack',
       component: () => import('./BasicStack'),
     },
   ],

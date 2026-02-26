@@ -25,10 +25,7 @@ export default function RootLayout() {
       >
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="expo-demos" options={{ headerShown: false }} />
-          <Stack.Screen name="learn/[categoryId]" />
-          <Stack.Screen name="learn/article/[articleId]" />
-          <Stack.Screen name="learn/demo/[demoId]" />
+          <Stack.Screen name="learn" options={{ headerShown: false }} />
           <Stack.Screen name="settings" />
           <Stack.Screen name="components-gallery" />
           <Stack.Screen name="component-demos/button" />

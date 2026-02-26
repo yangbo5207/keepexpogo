@@ -23,7 +23,7 @@ const quickLinks = [
   {
     title: "动效集合",
     description: "Reanimated 动画 demo 快速入口",
-    href: "/expo-demos/reanimated-basic" as const,
+    href: "/learn/06-reanimated/01-reanimated-basic/basic-animated-style" as const,
     icon: Compass,
   },
   {

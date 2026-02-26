@@ -9,19 +9,19 @@ const article: Article = {
       id: 'expo-router__modals__modal-presentation',
       title: 'Modal Presentation',
       description: 'Standard modal, fullScreenModal, and formSheet presentation styles.',
-      route: '/expo-demos/modal-present',
+      route: '/learn/04-expo-router/07-modals/modal-present',
     },
     {
       id: 'expo-router__modals__transparent-modal',
       title: 'Transparent Modal',
       description: 'Semi-transparent overlay modal with tap-to-dismiss background.',
-      route: '/expo-demos/modal-transparent',
+      route: '/learn/04-expo-router/07-modals/modal-transparent',
     },
     {
       id: 'expo-router__modals__dismiss-patterns',
       title: 'Dismiss Patterns',
       description: 'Compare back, dismiss, dismiss(2), and dismissAll for closing stacked modals.',
-      route: '/expo-demos/modal-dismiss',
+      route: '/learn/04-expo-router/07-modals/modal-dismiss',
     },
   ],
 };

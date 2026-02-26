@@ -9,13 +9,13 @@ const article: Article = {
       id: 'expo-router__drawer__basic-drawer',
       title: 'Basic Drawer',
       description: 'Side drawer with 3-4 pages and toggle button control.',
-      route: '/expo-demos/drawer-basic',
+      route: '/learn/04-expo-router/03-drawer/drawer-basic',
     },
     {
       id: 'expo-router__drawer__custom-drawer-content',
       title: 'Custom Drawer Content',
       description: 'Custom drawer with avatar, dividers, and logout section.',
-      route: '/expo-demos/drawer-custom',
+      route: '/learn/04-expo-router/03-drawer/drawer-custom',
     },
   ],
 };

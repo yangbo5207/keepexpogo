@@ -9,19 +9,19 @@ const article: Article = {
       id: 'expo-router__navigation__navigate-vs-push',
       title: 'Navigate vs Push',
       description: 'Compare navigate (reuse existing) vs push (always new) with stack depth visualization.',
-      route: '/expo-demos/nav-vs-push',
+      route: '/learn/04-expo-router/06-navigation-api/nav-vs-push',
     },
     {
       id: 'expo-router__navigation__replace-reset',
       title: 'Replace & Reset',
       description: 'Replace current screen (login → home) and reset entire navigation stack.',
-      route: '/expo-demos/nav-replace',
+      route: '/learn/04-expo-router/06-navigation-api/nav-replace',
     },
     {
       id: 'expo-router__navigation__link-component',
       title: 'Link Component',
       description: 'Declarative navigation with Link href, push, replace, and conditional Redirect.',
-      route: '/expo-demos/nav-link',
+      route: '/learn/04-expo-router/06-navigation-api/nav-link',
     },
   ],
 };

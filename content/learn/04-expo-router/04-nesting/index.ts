@@ -9,19 +9,19 @@ const article: Article = {
       id: 'expo-router__nesting__tabs-in-stack',
       title: 'Tabs In Stack',
       description: 'Root Stack containing Tabs, with a sub-Stack inside one Tab — three-level nesting.',
-      route: '/expo-demos/nest-tabs-stack',
+      route: '/learn/04-expo-router/04-nesting/nest-tabs-stack',
     },
     {
       id: 'expo-router__nesting__hide-tab-bar',
       title: 'Hide Tab Bar',
       description: 'Hide the bottom tab bar when navigating to a child screen.',
-      route: '/expo-demos/nest-hide-tabbar',
+      route: '/learn/04-expo-router/04-nesting/nest-hide-tabbar',
     },
     {
       id: 'expo-router__nesting__cross-navigator',
       title: 'Cross Navigator',
       description: 'Navigate from inside a Tab to a modal or another Stack outside the Tabs.',
-      route: '/expo-demos/nest-cross',
+      route: '/learn/04-expo-router/04-nesting/nest-cross',
     },
   ],
 };

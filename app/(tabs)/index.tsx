@@ -15,7 +15,7 @@ const highlightCards = [
   {
     title: "动画示例",
     description: "体验 Reanimated 驱动的动效",
-    href: "/expo-demos/reanimated-basic" as const,
+    href: "/learn/06-reanimated/01-reanimated-basic/basic-animated-style" as const,
     icon: Sparkles,
   },
   {

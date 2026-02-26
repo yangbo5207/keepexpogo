@@ -9,13 +9,13 @@ const article: Article = {
       id: 'expo-router__auth__auth-flow',
       title: 'Auth Flow',
       description: 'Complete login/logout flow with automatic redirect between auth and app screens.',
-      route: '/expo-demos/auth-flow',
+      route: '/learn/04-expo-router/08-auth/auth-flow',
     },
     {
       id: 'expo-router__auth__protected-screens',
       title: 'Protected Screens',
       description: 'Simulated (auth)/(app) group switching with splash loading and role-based access.',
-      route: '/expo-demos/auth-protected',
+      route: '/learn/04-expo-router/08-auth/auth-protected',
     },
   ],
 };
