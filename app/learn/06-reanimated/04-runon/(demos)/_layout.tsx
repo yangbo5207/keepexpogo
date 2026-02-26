@@ -13,6 +13,7 @@ export default function ReanimatedRunOnLayout() {
       }}
     >
       <Stack.Screen name="thread-communication" options={{ title: "runOnJS + runOnUI" }} />
+      <Stack.Screen name="like-rollback" options={{ title: "Like Rollback" }} />
     </Stack>
   );
 }
