@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { ListRow, ListRowGroup } from "@/components/ui/list-row";
 import { getCategoryById } from "@/app/learn/_content";
 import { useColorScheme } from "@/hooks/use-color-scheme";
+import { DemoBackButton } from "@/components/demo-back-button";
 
 export function ArticleScreenBase({ categoryId: categoryIdOverride, articleId: articleIdOverride }: { categoryId?: string; articleId?: string }) {
   const { categoryId, articleId } = useLocalSearchParams<{ categoryId: string; articleId: string }>();
@@ -30,7 +31,7 @@ export function ArticleScreenBase({ categoryId: categoryIdOverride, articleId: a
 
   return (
     <View className="flex-1 bg-cream-50 dark:bg-night-800">
-      <Stack.Screen options={{ title: article.title, headerShown: true }} />
+      <Stack.Screen options={{ title: article.title, headerShown: true, headerLeft: () => <DemoBackButton /> }} />
       <ScrollView contentContainerClassName="px-4 pb-12 pt-16">
         <Card className="mb-6">
         <Card.Header>

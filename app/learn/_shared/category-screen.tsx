@@ -6,6 +6,7 @@ import { ChevronRight } from "lucide-react-native";
 import { Card } from "@/components/ui/card";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { ListRow, ListRowGroup } from "@/components/ui/list-row";
+import { DemoBackButton } from "@/components/demo-back-button";
 import { getCategoryById } from "@/app/learn/_content";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -32,7 +33,7 @@ export function CategoryScreenBase({ categoryId: categoryIdOverride }: { categor
 
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800 p-4">
-      <Stack.Screen options={{ title: category.title, headerShown: true }} />
+      <Stack.Screen options={{ title: category.title, headerShown: true, headerLeft: () => <DemoBackButton /> }} />
       <Card className="mb-6">
         <Card.Header>
           <Card.Icon>
