@@ -10,6 +10,18 @@ const demos: {
   desc: string;
 }[] = [
   {
+    title: "Basic Animated Style",
+    route: "/expo-demos/reanimated-basic/basic-animated-style",
+    icon: "flip",
+    desc: "useSharedValue + useAnimatedStyle with direct assignment (no animation).",
+  },
+  {
+    title: "Basic Animated Style (Timing)",
+    route: "/expo-demos/reanimated-basic/basic-animated-style-timing",
+    icon: "schedule",
+    desc: "useSharedValue + useAnimatedStyle + withTiming for smooth movement.",
+  },
+  {
     title: "Spring Move",
     route: "/expo-demos/reanimated-basic/spring-move",
     icon: "swap-horiz",

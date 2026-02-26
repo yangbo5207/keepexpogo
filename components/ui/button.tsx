@@ -11,6 +11,7 @@ import Animated, {
   withSpring,
   withTiming,
 } from "react-native-reanimated";
+import { cn } from "@/libs/cn";
 
 /* ─── variant → style mapping (奶白轻奢 theme) ─── */
 
@@ -102,6 +103,7 @@ export interface ButtonProps extends Omit<PressableProps, "children"> {
   disabled?: boolean;
   /** Shows a spinner and disables interaction */
   loading?: boolean;
+  className?: string;
 }
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
@@ -117,6 +119,7 @@ export function Button({
   block = false,
   disabled = false,
   loading = false,
+  className,
   onPressIn,
   onPressOut,
   style,
@@ -226,7 +229,14 @@ export function Button({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
       disabled={isDisabled}
-      className={`flex-row items-center justify-center ${block ? "" : "self-start"} ${s.container} ${v.container} ${disabled ? "opacity-40" : ""}`}
+      className={cn(
+        "flex-row items-center justify-center",
+        block ? "" : "self-start",
+        s.container,
+        v.container,
+        disabled ? "opacity-40" : "",
+        className,
+      )}
       style={[animatedStyle, style]}
       {...rest}
     >

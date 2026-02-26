@@ -6,6 +6,18 @@ const article: Article = {
   description: 'Shared values, animated styles, and spring animations.',
   demos: [
     {
+      id: 'reanimated__basic__basic-animated-style',
+      title: 'Basic Animated Style',
+      description: 'useSharedValue + useAnimatedStyle with direct assignment (no animation).',
+      route: '/expo-demos/reanimated-basic/basic-animated-style',
+    },
+    {
+      id: 'reanimated__basic__basic-animated-style-timing',
+      title: 'Basic Animated Style (Timing)',
+      description: 'useSharedValue + useAnimatedStyle + withTiming for smooth movement.',
+      route: '/expo-demos/reanimated-basic/basic-animated-style-timing',
+    },
+    {
       id: 'reanimated__basic__spring-move',
       title: 'Spring Move',
       description: 'useSharedValue + useAnimatedStyle + withSpring to move a box.',

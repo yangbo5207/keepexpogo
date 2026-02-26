@@ -15,6 +15,14 @@ export default function ReanimatedBasicLayout() {
         options={{ title: "Reanimated Basic" }}
       />
       <Stack.Screen
+        name="basic-animated-style"
+        options={{ title: "Basic Animated Style" }}
+      />
+      <Stack.Screen
+        name="basic-animated-style-timing"
+        options={{ title: "Basic Animated Style (Timing)" }}
+      />
+      <Stack.Screen
         name="spring-move"
         options={{ title: "Spring Move" }}
       />
