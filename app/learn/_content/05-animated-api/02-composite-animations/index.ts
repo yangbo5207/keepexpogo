@@ -24,6 +24,12 @@ const article: Article = {
       route: '/learn/05-animated-api/02-composite-animations/stagger',
     },
     {
+      id: 'animated-api__composite__list-stagger',
+      title: '列表交错入场',
+      description: '通过 withDelay 让列表项按索引依次出现，提升界面节奏感。',
+      route: '/learn/05-animated-api/02-composite-animations/list-stagger',
+    },
+    {
       id: 'animated-api__composite__loop',
       title: 'Loop',
       description: 'Animated.loop for continuous spinning and pulsing effects.',

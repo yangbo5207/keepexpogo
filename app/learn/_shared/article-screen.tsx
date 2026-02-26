@@ -1,5 +1,5 @@
 import React from "react";
-import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { Stack, useLocalSearchParams, usePathname, useRouter } from "expo-router";
 import { ScrollView, Text, View } from "react-native";
 import { ChevronRight } from "lucide-react-native";
 
@@ -11,6 +11,7 @@ import { useColorScheme } from "@/hooks/use-color-scheme";
 export function ArticleScreenBase({ categoryId: categoryIdOverride, articleId: articleIdOverride }: { categoryId?: string; articleId?: string }) {
   const { categoryId, articleId } = useLocalSearchParams<{ categoryId: string; articleId: string }>();
   const router = useRouter();
+  const pathname = usePathname();
   const theme = useColorScheme() ?? "light";
   const arrowColor = theme === "dark" ? "#9e978a" : "#b3a57e";
   const resolvedCategoryId = categoryIdOverride ?? categoryId;
@@ -32,12 +33,15 @@ export function ArticleScreenBase({ categoryId: categoryIdOverride, articleId: a
       <Stack.Screen options={{ title: article.title, headerShown: true }} />
       <ScrollView contentContainerClassName="px-4 pb-12 pt-16">
         <Card className="mb-6">
-          <Card.Header>
-            <Card.Eyebrow>{article.demos.length} 个演示</Card.Eyebrow>
-          </Card.Header>
-          <Card.Title>{article.title}</Card.Title>
-          <Card.Description>{article.description}</Card.Description>
-        </Card>
+        <Card.Header>
+          <Card.Eyebrow>{article.demos.length} 个演示</Card.Eyebrow>
+        </Card.Header>
+        <Card.Title>{article.title}</Card.Title>
+        <Card.Description>{article.description}</Card.Description>
+        <Text className="mt-3 text-sm text-cream-800 underline dark:text-cream-200">
+          Path: {pathname}
+        </Text>
+      </Card>
 
         <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
           互动演示

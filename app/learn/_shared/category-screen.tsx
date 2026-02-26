@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, Text, View } from "react-native";
-import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { Stack, useLocalSearchParams, usePathname, useRouter } from "expo-router";
 import { ChevronRight } from "lucide-react-native";
 
 import { Card } from "@/components/ui/card";
@@ -15,6 +15,7 @@ export function CategoryScreenBase({ categoryId: categoryIdOverride }: { categor
   const router = useRouter();
   const id = categoryIdOverride ?? (Array.isArray(categoryId) ? categoryId[0] : categoryId);
   const category = id ? getCategoryById(id) : undefined;
+  const pathname = usePathname();
   const theme = useColorScheme() ?? "light";
   const iconColor = theme === "dark" ? "#e6d5ce" : "#6e4d38";
   const arrowColor = theme === "dark" ? "#9e978a" : "#b3a57e";
@@ -41,6 +42,9 @@ export function CategoryScreenBase({ categoryId: categoryIdOverride }: { categor
         </Card.Header>
         <Card.Title>{category.title}</Card.Title>
         <Card.Description>{category.description}</Card.Description>
+        <Text className="mt-3 text-sm text-cream-800 underline dark:text-cream-200">
+          Path: {pathname}
+        </Text>
       </Card>
 
       <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">

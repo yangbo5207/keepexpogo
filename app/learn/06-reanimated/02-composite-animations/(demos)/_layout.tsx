@@ -14,6 +14,9 @@ export default function ReanimatedCompositeLayout() {
     >
       <Stack.Screen name="sequence" options={{ title: "withSequence" }} />
       <Stack.Screen name="shake" options={{ title: "Shake" }} />
+      <Stack.Screen name="list-stagger" options={{ title: "List Stagger" }} />
+      <Stack.Screen name="pulse" options={{ title: "Pulse" }} />
+      <Stack.Screen name="add-to-cart" options={{ title: "Add to Cart" }} />
     </Stack>
   );
 }

@@ -17,6 +17,24 @@ const article: Article = {
       description: 'withSequence + withRepeat 组合左右晃动。',
       route: '/learn/06-reanimated/02-composite-animations/shake',
     },
+    {
+      id: 'reanimated__composite__list-stagger',
+      title: '列表交错入场',
+      description: '用 withDelay 按索引延迟出现，提升层次感。',
+      route: '/learn/06-reanimated/02-composite-animations/list-stagger',
+    },
+    {
+      id: 'reanimated__composite__pulse',
+      title: '呼吸灯按钮 (Pulse)',
+      description: 'withRepeat + withTiming 实现持续呼吸的缩放效果。',
+      route: '/learn/06-reanimated/02-composite-animations/pulse',
+    },
+    {
+      id: 'reanimated__composite__add-to-cart',
+      title: '加入购物车',
+      description: '点击后：缩小反馈、弹起放大、回到原状。',
+      route: '/learn/06-reanimated/02-composite-animations/add-to-cart',
+    },
   ],
 };
 

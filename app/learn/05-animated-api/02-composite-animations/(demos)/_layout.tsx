@@ -15,6 +15,7 @@ export default function AnimCompositeLayout() {
       <Stack.Screen name="sequence" options={{ title: "Sequence" }} />
       <Stack.Screen name="parallel" options={{ title: "Parallel" }} />
       <Stack.Screen name="stagger" options={{ title: "Stagger" }} />
+      <Stack.Screen name="list-stagger" options={{ title: "List Stagger" }} />
       <Stack.Screen name="loop" options={{ title: "Loop" }} />
       <Stack.Screen name="button-feedback" options={{ title: "Button Feedback" }} />
     </Stack>
