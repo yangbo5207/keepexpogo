@@ -4,6 +4,7 @@ import compositeAnimations from './02-composite-animations';
 import derived from './03-derived';
 import runOn from './04-runon';
 import interpolateArticle from './05-interpolate';
+import interpolateAdvanced from './06-interpolate-advanced';
 
 const category: Category = {
   id: '06-reanimated',
@@ -11,7 +12,7 @@ const category: Category = {
   description: 'High-performance animations with worklets, shared values, and gesture-driven interactions.',
   icon: 'bolt.fill',
   order: 6,
-  articles: [reanimatedBasic, compositeAnimations, derived, runOn, interpolateArticle],
+  articles: [reanimatedBasic, compositeAnimations, derived, runOn, interpolateArticle, interpolateAdvanced],
 };
 
 export default category;
