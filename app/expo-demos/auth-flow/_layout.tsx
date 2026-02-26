@@ -2,6 +2,7 @@ import { Stack, Redirect } from 'expo-router';
 import { View, Text, ActivityIndicator } from 'react-native';
 import { AuthProvider, useAuth } from './_context';
 import { DemoBackButton } from '@/components/demo-back-button';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 function AuthLayoutInner() {
   const { user, isLoading } = useAuth();
@@ -29,6 +30,7 @@ function AuthLayoutInner() {
 }
 
 export default function AuthFlowLayout() {
+  const headerTheme = useDemoHeaderTheme();
   return (
     <AuthProvider>
       <AuthLayoutInner />

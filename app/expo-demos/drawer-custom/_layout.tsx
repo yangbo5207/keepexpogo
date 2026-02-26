@@ -3,6 +3,7 @@ import { View, Text, Pressable, ScrollView } from 'react-native';
 import { useRouter, usePathname } from 'expo-router';
 import { DemoBackButton } from '@/components/demo-back-button';
 import type { DrawerContentComponentProps } from '@react-navigation/drawer';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 const menuItems = [
   { key: 'index', label: 'Dashboard', icon: '📊', section: 'main' },
@@ -76,6 +77,7 @@ function CustomDrawerContent({ state, navigation }: DrawerContentComponentProps)
 }
 
 export default function DrawerCustomLayout() {
+  const headerTheme = useDemoHeaderTheme();
   return (
     <Drawer
       drawerContent={(props) => <CustomDrawerContent {...props} />}

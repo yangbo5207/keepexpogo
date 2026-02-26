@@ -18,22 +18,10 @@ const article: Article = {
       route: '/expo-demos/reanimated-basic/basic-animated-style-timing',
     },
     {
-      id: 'reanimated__basic__spring-move',
-      title: 'Spring Move',
-      description: 'useSharedValue + useAnimatedStyle + withSpring to move a box.',
-      route: '/expo-demos/reanimated-basic/spring-move',
-    },
-    {
-      id: 'reanimated__basic__timing-move',
-      title: 'Timing Move',
-      description: 'withTiming default vs custom duration and Easing.bezier curve.',
-      route: '/expo-demos/reanimated-basic/timing-move',
-    },
-    {
-      id: 'reanimated__basic__spring-config',
-      title: 'Spring Config',
-      description: 'withSpring with different damping, stiffness, and mass configs.',
-      route: '/expo-demos/reanimated-basic/spring-config',
+      id: 'reanimated__basic__basic-animated-style-spring',
+      title: 'Basic Animated Style (Spring)',
+      description: 'useSharedValue + useAnimatedStyle + withSpring for springy motion.',
+      route: '/expo-demos/reanimated-basic/basic-animated-style-spring',
     },
     {
       id: 'reanimated__basic__decay-drag',

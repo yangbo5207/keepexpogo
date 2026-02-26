@@ -1,7 +1,9 @@
 import { Stack } from 'expo-router';
 import { DemoBackButton } from '@/components/demo-back-button';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 export default function NavVsPushLayout() {
+  const headerTheme = useDemoHeaderTheme();
   return (
     <Stack>
       <Stack.Screen
@@ -9,13 +11,12 @@ export default function NavVsPushLayout() {
         options={{
           title: 'Navigate vs Push',
           headerLeft: () => <DemoBackButton />,
-          headerStyle: { backgroundColor: '#6366f1' },
-          headerTintColor: '#fff',
+          ...headerTheme,
         }}
       />
-      <Stack.Screen name="home" options={{ title: 'Home', headerStyle: { backgroundColor: '#6366f1' }, headerTintColor: '#fff' }} />
-      <Stack.Screen name="profile" options={{ title: 'Profile', headerStyle: { backgroundColor: '#6366f1' }, headerTintColor: '#fff' }} />
-      <Stack.Screen name="settings" options={{ title: 'Settings', headerStyle: { backgroundColor: '#6366f1' }, headerTintColor: '#fff' }} />
+      <Stack.Screen name="home" options={{ title: 'Home', ...headerTheme,}} />
+      <Stack.Screen name="profile" options={{ title: 'Profile', ...headerTheme,}} />
+      <Stack.Screen name="settings" options={{ title: 'Settings', ...headerTheme,}} />
     </Stack>
   );
 }

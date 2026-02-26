@@ -1,7 +1,10 @@
 import { Stack } from 'expo-router';
 import { DemoBackButton } from '@/components/demo-back-button';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 export default function StackBasicLayout() {
+  const headerTheme = useDemoHeaderTheme();
+
   return (
     <Stack>
       <Stack.Screen
@@ -9,24 +12,21 @@ export default function StackBasicLayout() {
         options={{
           title: 'Home',
           headerLeft: () => <DemoBackButton />,
-          headerStyle: { backgroundColor: '#6366f1' },
-          headerTintColor: '#fff',
+          ...headerTheme,
         }}
       />
       <Stack.Screen
         name="detail"
         options={{
           title: 'Detail',
-          headerStyle: { backgroundColor: '#6366f1' },
-          headerTintColor: '#fff',
+          ...headerTheme,
         }}
       />
       <Stack.Screen
         name="sub-detail"
         options={{
           title: 'SubDetail',
-          headerStyle: { backgroundColor: '#6366f1' },
-          headerTintColor: '#fff',
+          ...headerTheme,
         }}
       />
     </Stack>

@@ -1,14 +1,15 @@
 import { Tabs } from 'expo-router';
 import { Text, View } from 'react-native';
 import { DemoBackButton } from '@/components/demo-back-button';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 export default function TabsBasicLayout() {
+  const headerTheme = useDemoHeaderTheme();
   return (
     <Tabs
       screenOptions={{
         headerRight: () => <DemoBackButton />,
-        headerStyle: { backgroundColor: '#6366f1' },
-        headerTintColor: '#fff',
+        ...headerTheme,
       }}
     >
       <Tabs.Screen

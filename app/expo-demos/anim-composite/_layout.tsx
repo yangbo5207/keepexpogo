@@ -1,12 +1,14 @@
 import { DemoBackButton } from "@/components/demo-back-button";
 import { Stack } from "expo-router";
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 export default function AnimCompositeLayout() {
+  const headerTheme = useDemoHeaderTheme();
+
   return (
     <Stack
       screenOptions={{
-        headerStyle: { backgroundColor: "#f97316" },
-        headerTintColor: "#fff",
+        ...headerTheme,
         headerLeft: () => <DemoBackButton />,
       }}
     >

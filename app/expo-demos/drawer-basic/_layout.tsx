@@ -1,13 +1,14 @@
 import { Drawer } from 'expo-router/drawer';
 import { DemoBackButton } from '@/components/demo-back-button';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 export default function DrawerBasicLayout() {
+  const headerTheme = useDemoHeaderTheme();
   return (
     <Drawer
       screenOptions={{
         headerRight: () => <DemoBackButton />,
-        headerStyle: { backgroundColor: '#6366f1' },
-        headerTintColor: '#fff',
+        ...headerTheme,
         drawerActiveTintColor: '#6366f1',
       }}
     >

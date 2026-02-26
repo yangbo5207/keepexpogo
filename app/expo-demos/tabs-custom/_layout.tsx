@@ -3,6 +3,7 @@ import { View, Text, Pressable, Animated } from 'react-native';
 import { useRef, useEffect } from 'react';
 import { DemoBackButton } from '@/components/demo-back-button';
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 const TAB_ITEMS = [
   { key: 'index', label: 'Feed', icon: '○', activeIcon: '●' },
@@ -61,13 +62,13 @@ function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 }
 
 export default function TabsCustomLayout() {
+  const headerTheme = useDemoHeaderTheme();
   return (
     <Tabs
       tabBar={(props) => <CustomTabBar {...props} />}
       screenOptions={{
         headerRight: () => <DemoBackButton />,
-        headerStyle: { backgroundColor: '#6366f1' },
-        headerTintColor: '#fff',
+        ...headerTheme,
       }}
     >
       <Tabs.Screen name="index" options={{ title: 'Feed' }} />

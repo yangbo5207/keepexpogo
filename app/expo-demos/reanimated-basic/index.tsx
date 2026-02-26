@@ -22,22 +22,10 @@ const demos: {
     desc: "useSharedValue + useAnimatedStyle + withTiming for smooth movement.",
   },
   {
-    title: "Spring Move",
-    route: "/expo-demos/reanimated-basic/spring-move",
-    icon: "swap-horiz",
-    desc: "useSharedValue + useAnimatedStyle + withSpring to move a box.",
-  },
-  {
-    title: "Timing Move",
-    route: "/expo-demos/reanimated-basic/timing-move",
-    icon: "timer",
-    desc: "withTiming default vs custom duration and Easing.bezier curve.",
-  },
-  {
-    title: "Spring Config",
-    route: "/expo-demos/reanimated-basic/spring-config",
-    icon: "tune",
-    desc: "withSpring with different damping, stiffness, and mass configs.",
+    title: "Basic Animated Style (Spring)",
+    route: "/expo-demos/reanimated-basic/basic-animated-style-spring",
+    icon: "waves",
+    desc: "useSharedValue + useAnimatedStyle + withSpring for springy motion.",
   },
   {
     title: "Decay Drag",

@@ -1,7 +1,9 @@
 import { Stack } from 'expo-router';
 import { DemoBackButton } from '@/components/demo-back-button';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 export default function DynamicSearchLayout() {
+  const headerTheme = useDemoHeaderTheme();
   return (
     <Stack>
       <Stack.Screen
@@ -9,8 +11,7 @@ export default function DynamicSearchLayout() {
         options={{
           title: 'Search',
           headerLeft: () => <DemoBackButton />,
-          headerStyle: { backgroundColor: '#6366f1' },
-          headerTintColor: '#fff',
+          ...headerTheme,
         }}
       />
     </Stack>

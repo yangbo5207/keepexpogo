@@ -3,6 +3,7 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import { ProtectedAuthProvider, useProtectedAuth } from './_context';
 import { DemoBackButton } from '@/components/demo-back-button';
 import { useState, useEffect } from 'react';
+import { useDemoHeaderTheme } from "@/components/ui/demo-header-theme";
 
 function ProtectedLayoutInner() {
   const { session, isLoading } = useProtectedAuth();
@@ -48,6 +49,7 @@ function ProtectedLayoutInner() {
 }
 
 export default function AuthProtectedLayout() {
+  const headerTheme = useDemoHeaderTheme();
   return (
     <ProtectedAuthProvider>
       <ProtectedLayoutInner />
