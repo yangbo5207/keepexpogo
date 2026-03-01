@@ -11,7 +11,13 @@ import { getCategoryById } from "@/app/learn/_content";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-export function CategoryScreenBase({ categoryId: categoryIdOverride }: { categoryId?: string }) {
+export function CategoryScreenBase({
+  categoryId: categoryIdOverride,
+  extraBottomSpace = 0,
+}: {
+  categoryId?: string;
+  extraBottomSpace?: number;
+}) {
   const { categoryId } = useLocalSearchParams<{ categoryId: string }>();
   const router = useRouter();
   const id = categoryIdOverride ?? (Array.isArray(categoryId) ? categoryId[0] : categoryId);
@@ -69,7 +75,7 @@ export function CategoryScreenBase({ categoryId: categoryIdOverride }: { categor
           />
         ))}
       </ListRowGroup>
-      <View style={{ height: insets.bottom }} />
+      <View style={{ height: insets.bottom + extraBottomSpace }} />
     </ScrollView>
   );
 }

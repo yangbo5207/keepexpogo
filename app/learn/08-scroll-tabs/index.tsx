@@ -2,5 +2,5 @@ import React from "react";
 import { CategoryScreenBase } from "@/app/learn/_shared/category-screen";
 
 export default function CategoryIndex() {
-  return <CategoryScreenBase categoryId="07-gesture-handler" extraBottomSpace={48} />;
+  return <CategoryScreenBase categoryId="08-scroll-tabs" />;
 }

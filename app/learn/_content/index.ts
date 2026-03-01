@@ -6,6 +6,7 @@ import expoRouter from './04-expo-router';
 import animatedApi from './05-animated-api';
 import reanimated from './06-reanimated';
 import gestureHandler from './07-gesture-handler';
+import scrollTabs from './08-scroll-tabs';
 
 export const categories: Category[] = [
   reactBasics,
@@ -15,6 +16,7 @@ export const categories: Category[] = [
   animatedApi,
   reanimated,
   gestureHandler,
+  scrollTabs,
 ].sort((a, b) => a.order - b.order);
 
 export function getCategoryById(id: string): Category | undefined {
