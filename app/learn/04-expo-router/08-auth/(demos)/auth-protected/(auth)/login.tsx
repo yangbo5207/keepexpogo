@@ -14,7 +14,7 @@ export default function ProtectedLogin() {
 
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800" contentContainerClassName="gap-4 p-4 pb-8">
-      <View className="flex-row items-center gap-2 rounded-lg bg-warning-50 px-3 py-2 dark:bg-warning-900/20">
+      <View className="flex-row items-center gap-2 rounded-xs bg-warning-50 px-3 py-2 dark:bg-warning-900/20">
         <Text className="text-xs">🔒</Text>
         <Text className="flex-1 font-mono text-xs text-warning-600 dark:text-warning-400">(auth) group — not logged in</Text>
         <DemoBackButton />

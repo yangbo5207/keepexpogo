@@ -25,26 +25,26 @@ interface ButtonProps {
 const variantClasses: Record<ButtonVariant, { base: string; text: string }> = {
   primary: {
     base: 'bg-blue-500 active:bg-blue-700 dark:bg-blue-600 dark:active:bg-blue-800',
-    text: 'text-white',
+    text: 'text-cream-50',
   },
   secondary: {
-    base: 'bg-gray-200 active:bg-gray-300 dark:bg-gray-700 dark:active:bg-gray-600',
-    text: 'text-gray-800 dark:text-gray-100',
+    base: 'bg-cream-200 active:bg-cream-300 dark:bg-night-600 dark:active:bg-night-500',
+    text: 'text-cream-900 dark:text-night-50',
   },
   danger: {
     base: 'bg-red-500 active:bg-red-700 dark:bg-red-600 dark:active:bg-red-800',
-    text: 'text-white',
+    text: 'text-cream-50',
   },
   ghost: {
-    base: 'bg-transparent active:bg-gray-100 dark:active:bg-gray-800',
+    base: 'bg-transparent active:bg-cream-100 dark:active:bg-night-700',
     text: 'text-blue-500 dark:text-blue-400',
   },
 };
 
 const sizeClasses: Record<ButtonSize, { base: string; text: string }> = {
-  sm: { base: 'px-3 py-1.5 rounded-md gap-1.5', text: 'text-xs' },
-  md: { base: 'px-4 py-2.5 rounded-lg gap-2', text: 'text-sm' },
-  lg: { base: 'px-6 py-3.5 rounded-xl gap-2.5', text: 'text-base' },
+  sm: { base: 'px-3 py-1.5 rounded-xs gap-1.5', text: 'text-xs' },
+  md: { base: 'px-4 py-2.5 rounded-xs gap-2', text: 'text-sm' },
+  lg: { base: 'px-6 py-3.5 rounded-xs gap-2.5', text: 'text-base' },
 };
 
 const disabledClasses = {
@@ -98,23 +98,23 @@ const sizeLabels: Record<ButtonSize, string> = { sm: 'SM', md: 'MD', lg: 'LG' };
 export default function StyledButtons() {
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-6 p-4 pb-12">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         Button 组件
       </Text>
 
       {/* Variant × Size Matrix */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           变体 × 尺寸矩阵
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           4 variant × 3 size = 12 种组合
         </Text>
       </View>
 
       {variants.map((variant) => (
         <View key={variant} className="gap-2">
-          <Text className="text-xs font-semibold text-gray-500 dark:text-gray-400">
+          <Text className="text-xs font-semibold text-cream-600 dark:text-night-300">
             {variantLabels[variant]}
           </Text>
           <View className="flex-row flex-wrap items-end gap-3">
@@ -129,7 +129,7 @@ export default function StyledButtons() {
 
       {/* Disabled */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Disabled 状态
         </Text>
         <View className="flex-row flex-wrap gap-3">
@@ -143,7 +143,7 @@ export default function StyledButtons() {
 
       {/* Loading */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Loading 状态
         </Text>
         <View className="flex-row flex-wrap gap-3">
@@ -161,10 +161,10 @@ export default function StyledButtons() {
 
       {/* className Merge */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           className 透传合并
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           外部传入 className="w-full" 撑满容器宽度
         </Text>
         <Button variant="primary" size="lg" className="w-full">
@@ -176,7 +176,7 @@ export default function StyledButtons() {
       </View>
 
       {/* Note */}
-      <View className="rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
+      <View className="rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
         <Text className="text-xs text-blue-700 dark:text-blue-300">
           核心设计：variant 和 size 通过映射对象管理静态类名，disabled/loading
           通过 opacity 和 ActivityIndicator 表达状态，外部 className

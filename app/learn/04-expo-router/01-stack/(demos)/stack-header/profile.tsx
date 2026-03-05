@@ -3,7 +3,7 @@ import { View, Text, ScrollView } from 'react-native';
 export default function HeaderProfile() {
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800" contentContainerClassName="gap-4 p-4 pb-8">
-      <View className="rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+      <View className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <Text className="mb-2 text-sm font-semibold text-cream-700 dark:text-night-200">
           Current header options
         </Text>
@@ -25,7 +25,7 @@ export default function HeaderProfile() {
         </View>
       </View>
 
-      <View className="rounded-xl bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="mb-1 text-xs font-semibold text-primary-700 dark:text-primary-300">
           Expo Router equivalent
         </Text>

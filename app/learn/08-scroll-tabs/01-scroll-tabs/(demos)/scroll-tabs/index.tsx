@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Text, View } from "react-native";
-import { ScrollableTabs, type ScrollTabItem } from "./ScrollableTabs";
+import { ScrollableTabs, type ScrollTabItem } from "./scrollable-tabs";
 
 const TABS: ScrollTabItem[] = [
   { key: "all", label: "全部" },

@@ -7,7 +7,7 @@ export default function ScreenOptionsModal() {
 
   return (
     <View className="flex-1 items-center justify-center bg-black/50 p-6">
-      <View className="w-full rounded-2xl bg-cream-50 p-6 dark:bg-night-700">
+      <View className="w-full rounded-xs bg-cream-50 p-6 dark:bg-night-700">
         <Text className="mt-2 text-sm text-cream-700 dark:text-night-200">
           This screen overrides screenOptions with its own{'\n'}
           <Text className="font-mono text-primary-600 dark:text-primary-400">

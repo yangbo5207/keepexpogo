@@ -4,13 +4,13 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function StyleCompare() {
   return (
     <View className="flex-1 gap-6 p-4">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         StyleSheet vs className
       </Text>
 
       {/* StyleSheet 写法 */}
       <View>
-        <Text className="mb-2 text-sm font-semibold text-gray-500 dark:text-gray-400">
+        <Text className="mb-2 text-sm font-semibold text-cream-600 dark:text-night-300">
           StyleSheet 写法
         </Text>
         <View style={styles.card}>
@@ -31,22 +31,22 @@ export default function StyleCompare() {
 
       {/* NativeWind className 写法 */}
       <View>
-        <Text className="mb-2 text-sm font-semibold text-gray-500 dark:text-gray-400">
+        <Text className="mb-2 text-sm font-semibold text-cream-600 dark:text-night-300">
           NativeWind className 写法
         </Text>
-        <View className="rounded-xl bg-white p-4 shadow-sm dark:bg-gray-800">
-          <Text className="text-lg font-bold text-gray-800 dark:text-gray-100">
+        <View className="rounded-xs bg-cream-50 p-4 shadow-sm dark:bg-night-700">
+          <Text className="text-lg font-bold text-cream-900 dark:text-night-50">
             Card Title
           </Text>
-          <Text className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+          <Text className="mt-1 text-sm text-cream-600 dark:text-night-200">
             使用 className 直接编写 Tailwind 工具类，代码更简洁直观。
           </Text>
           <View className="mt-3 flex-row gap-2">
             <View className="rounded-full bg-blue-500 px-3 py-1">
-              <Text className="text-xs font-semibold text-white">React Native</Text>
+              <Text className="text-xs font-semibold text-cream-50">React Native</Text>
             </View>
-            <View className="rounded-full bg-gray-200 px-3 py-1 dark:bg-gray-700">
-              <Text className="text-xs font-semibold text-gray-700 dark:text-gray-200">
+            <View className="rounded-full bg-cream-200 px-3 py-1 dark:bg-night-600">
+              <Text className="text-xs font-semibold text-cream-700 dark:text-night-200">
                 NativeWind
               </Text>
             </View>
@@ -54,7 +54,7 @@ export default function StyleCompare() {
         </View>
       </View>
 
-      <View className="rounded-lg bg-amber-50 p-3 dark:bg-amber-900/20">
+      <View className="rounded-xs bg-amber-50 p-3 dark:bg-amber-900/20">
         <Text className="text-sm text-amber-800 dark:text-amber-200">
           两种方式最终渲染效果相同。NativeWind 在打包时将 className 转为 StyleSheet，没有运行时性能损耗。
         </Text>

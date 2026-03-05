@@ -69,7 +69,7 @@ export default function NavLinkIndex() {
         </ListRowGroup>
       </View>
 
-      <View className="rounded-xl bg-secondary-50 p-4 dark:bg-secondary-900/20">
+      <View className="rounded-xs bg-secondary-50 p-4 dark:bg-secondary-900/20">
         <Text className="mb-1 text-xs font-semibold text-secondary-700 dark:text-secondary-300">Expo Router code</Text>
         <Text className="font-mono text-xs leading-5 text-secondary-600 dark:text-secondary-400">
           {'import { Link, Redirect } from "expo-router"\n\n// Default: navigate behavior\n<Link href="/about">About</Link>\n\n// Always push new screen\n<Link push href="/blog">Blog</Link>\n\n// Replace current screen\n<Link replace href="/about">About</Link>\n\n// Conditional redirect\nif (!session) {\n  return <Redirect href="/login" />\n}'}

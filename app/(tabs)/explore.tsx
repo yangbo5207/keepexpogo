@@ -29,7 +29,7 @@ const quickLinks = [
   {
     title: "学习中心",
     description: "阅读主题与实现细节",
-    href: "/learn/1" as const,
+    href: "/learn" as const,
     icon: BookOpen,
   },
 ];
@@ -49,7 +49,7 @@ export default function ExploreScreen() {
         headerBackgroundClassName="bg-cream-100/95 dark:bg-night-700/95"
         className="px-5 pb-14"
       >
-        <View className="my-8 rounded-2xl border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
+        <View className="my-8 rounded-xs border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
           <View className="flex-row items-center">
             <View className="mr-3 rounded-full bg-secondary-100 p-2 dark:bg-night-600">
               <Palette size={18} color={iconColor} />
@@ -65,8 +65,8 @@ export default function ExploreScreen() {
             以温润的奶白为基底，通过轻微的阴影与弹簧动画营造克制的高级质感。
           </Text>
           <Link
-            href="/learn/1"
-            className="mt-4 self-start rounded-full border border-cream-300 bg-cream-200 px-4 py-2 dark:border-night-500 dark:bg-night-600"
+            href="/learn"
+            className="mt-4 self-start rounded-xs border border-cream-300 bg-cream-200 px-4 py-2 dark:border-night-500 dark:bg-night-600"
           >
             <Text className="text-sm font-semibold text-cream-800 dark:text-night-50">
               阅读主题说明
@@ -91,7 +91,7 @@ export default function ExploreScreen() {
                 }
                 right={<ArrowRight size={18} color={arrowColor} />}
                 onPress={() => router.push(item.href)}
-                className="rounded-2xl border border-cream-200 dark:border-night-600"
+                className="rounded-xs border border-cream-200 dark:border-night-600"
               />
             ))}
           </View>

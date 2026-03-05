@@ -7,6 +7,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import { useColorScheme } from "@/hooks/use-color-scheme";
+import { designSystem } from "@/constants/design-system";
 
 export interface ListRowProps
   extends Omit<PressableProps, "children" | "style"> {
@@ -36,7 +37,7 @@ export function ListRow({
   active = false,
   autoTintRight = false,
   autoTintLeft = false,
-  radius = 16,
+  radius = designSystem.radius.xs,
   disabled = false,
   className,
   titleClassName,
@@ -108,13 +109,13 @@ export function ListRow({
   const leftTint = rightTint;
   const leftEl =
     autoTintLeft && React.isValidElement(left)
-      ? React.cloneElement(left, {
+      ? React.cloneElement(left as React.ReactElement<{ color?: string }>, {
           color: leftTint,
         })
       : left;
   const rightEl =
     autoTintRight && React.isValidElement(right)
-      ? React.cloneElement(right, {
+      ? React.cloneElement(right as React.ReactElement<{ color?: string }>, {
           color: rightTint,
         })
       : right;
@@ -182,7 +183,7 @@ export function ListRowGroup({
 
   return (
     <View
-      className={`overflow-hidden rounded-xl border border-cream-300 bg-cream-100 dark:border-night-500 dark:bg-night-700 ${className ?? ""}`}
+      className={`overflow-hidden rounded-xs border border-cream-300 bg-cream-100 dark:border-night-500 dark:bg-night-700 ${className ?? ""}`}
     >
       {items.map((child, index) =>
         React.isValidElement(child)

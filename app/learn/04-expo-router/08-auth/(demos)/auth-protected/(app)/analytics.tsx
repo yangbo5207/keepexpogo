@@ -22,7 +22,7 @@ export default function ProtectedAnalytics() {
         <Text className="text-3xl">📈</Text>
       </View>
       {['Page views: 15.2K', 'Bounce rate: 32%', 'Avg session: 4m 23s'].map((item, i) => (
-        <View key={i} className="flex-row items-center justify-between rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+        <View key={i} className="flex-row items-center justify-between rounded-xs bg-cream-100 p-4 dark:bg-night-700">
           <Text className="text-sm text-cream-700 dark:text-night-200">{item.split(':')[0]}</Text>
           <Text className="font-semibold text-cream-900 dark:text-night-50">{item.split(':')[1]}</Text>
         </View>

@@ -12,7 +12,7 @@ interface CardProps {
 function Card({ children, className = '' }: CardProps) {
   return (
     <View
-      className={`rounded-2xl bg-white dark:bg-gray-800 ${className}`}
+      className={`rounded-xs bg-cream-50 dark:bg-night-700 ${className}`}
     >
       {children}
     </View>
@@ -22,7 +22,7 @@ function Card({ children, className = '' }: CardProps) {
 function CardHeader({ children, className = '' }: CardProps) {
   return (
     <View
-      className={`border-b border-gray-100 px-4 py-3 dark:border-gray-700 ${className}`}
+      className={`border-b border-cream-100 px-4 py-3 dark:border-night-600 ${className}`}
     >
       {children}
     </View>
@@ -36,7 +36,7 @@ function CardBody({ children, className = '' }: CardProps) {
 function CardFooter({ children, className = '' }: CardProps) {
   return (
     <View
-      className={`border-t border-gray-100 px-4 py-3 dark:border-gray-700 ${className}`}
+      className={`border-t border-cream-100 px-4 py-3 dark:border-night-600 ${className}`}
     >
       {children}
     </View>
@@ -113,7 +113,7 @@ function Avatar({ name, size = 'md', className = '' }: AvatarProps) {
     <View
       className={`items-center justify-center rounded-full bg-blue-500 dark:bg-blue-600 ${avatarSizeMap[size]} ${className}`}
     >
-      <Text className={`font-bold text-white ${avatarTextMap[size]}`}>
+      <Text className={`font-bold text-cream-50 ${avatarTextMap[size]}`}>
         {initials}
       </Text>
     </View>
@@ -170,7 +170,7 @@ interface AlertProps {
 function Alert({ variant, title, description, className = '' }: AlertProps) {
   return (
     <View
-      className={`rounded-lg p-3 ${alertBgMap[variant]} ${alertBorderMap[variant]} ${className}`}
+      className={`rounded-xs p-3 ${alertBgMap[variant]} ${alertBorderMap[variant]} ${className}`}
     >
       <View className="flex-row items-center gap-2">
         <Text className="text-base">{alertIconMap[variant]}</Text>
@@ -193,34 +193,34 @@ function Alert({ variant, title, description, className = '' }: AlertProps) {
 export default function CardAndLayout() {
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-6 p-4 pb-12">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         Card / Badge / Avatar / Alert
       </Text>
 
       {/* ── Card 组合 API ─────────────────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Card 组合式 API
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           Card + CardHeader + CardBody + CardFooter
         </Text>
       </View>
 
       <Card>
         <CardHeader>
-          <Text className="text-base font-semibold text-gray-800 dark:text-gray-100">
+          <Text className="text-base font-semibold text-cream-900 dark:text-night-50">
             项目概览
           </Text>
         </CardHeader>
         <CardBody>
-          <Text className="text-sm text-gray-600 dark:text-gray-400">
+          <Text className="text-sm text-cream-600 dark:text-night-300">
             这是一个使用 NativeWind 构建的组件库示例。Card
             组件由四个子组件组合而成，支持 className 透传。
           </Text>
         </CardBody>
         <CardFooter>
-          <Text className="text-xs text-gray-400 dark:text-gray-500">
+          <Text className="text-xs text-cream-500 dark:text-night-400">
             最后更新：2025 年 6 月
           </Text>
         </CardFooter>
@@ -228,7 +228,7 @@ export default function CardAndLayout() {
 
       {/* ── Badge ────────────────────────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Badge 状态变体
         </Text>
         <View className="flex-row flex-wrap gap-2">
@@ -241,7 +241,7 @@ export default function CardAndLayout() {
 
       {/* ── Avatar ───────────────────────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Avatar 尺寸变体 + 文字回退
         </Text>
         <View className="flex-row items-end gap-4">
@@ -253,7 +253,7 @@ export default function CardAndLayout() {
 
       {/* ── Alert ────────────────────────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Alert 语义变体
         </Text>
       </View>
@@ -267,10 +267,10 @@ export default function CardAndLayout() {
 
       {/* ── 组合实战：用户资料卡片 ───────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           组合实战 — 用户资料卡片
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           Card + Avatar + Badge + Alert + Button 整合
         </Text>
       </View>
@@ -280,18 +280,18 @@ export default function CardAndLayout() {
           <Avatar name="Yang Bo" size="lg" />
           <View className="flex-1">
             <View className="flex-row items-center gap-2">
-              <Text className="text-lg font-bold text-gray-800 dark:text-gray-100">
+              <Text className="text-lg font-bold text-cream-900 dark:text-night-50">
                 Yang Bo
               </Text>
               <Badge status="success" label="在线" />
             </View>
-            <Text className="text-sm text-gray-500 dark:text-gray-400">
+            <Text className="text-sm text-cream-600 dark:text-night-300">
               前端工程师 · React Native
             </Text>
           </View>
         </CardHeader>
         <CardBody className="gap-3">
-          <Text className="text-sm text-gray-600 dark:text-gray-400">
+          <Text className="text-sm text-cream-600 dark:text-night-300">
             专注于跨平台移动开发，擅长 React Native + NativeWind
             组件库设计。目前正在维护 keepexpogo 项目。
           </Text>
@@ -302,11 +302,11 @@ export default function CardAndLayout() {
           />
         </CardBody>
         <CardFooter className="flex-row gap-3">
-          <Pressable className="flex-1 items-center rounded-lg bg-blue-500 py-2.5 active:bg-blue-700 dark:bg-blue-600">
-            <Text className="text-sm font-semibold text-white">关注</Text>
+          <Pressable className="flex-1 items-center rounded-xs bg-blue-500 py-2.5 active:bg-blue-700 dark:bg-blue-600">
+            <Text className="text-sm font-semibold text-cream-50">关注</Text>
           </Pressable>
-          <Pressable className="flex-1 items-center rounded-lg bg-gray-200 py-2.5 active:bg-gray-300 dark:bg-gray-700">
-            <Text className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+          <Pressable className="flex-1 items-center rounded-xs bg-cream-200 py-2.5 active:bg-cream-300 dark:bg-night-600">
+            <Text className="text-sm font-semibold text-cream-900 dark:text-night-50">
               消息
             </Text>
           </Pressable>
@@ -314,7 +314,7 @@ export default function CardAndLayout() {
       </Card>
 
       {/* Note */}
-      <View className="rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
+      <View className="rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
         <Text className="text-xs text-blue-700 dark:text-blue-300">
           核心设计：Card 使用组合式 API（Composition Pattern），通过 children
           透传内容，每个子组件只负责自身的边框和间距。Badge、Avatar、Alert

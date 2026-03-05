@@ -58,15 +58,15 @@ function CompactUserCard({ user }: { user: (typeof users)[0] }) {
     .slice(0, 2);
 
   return (
-    <View className="flex-row items-center gap-3 rounded-xl bg-white p-3 dark:bg-gray-800">
+    <View className="flex-row items-center gap-3 rounded-xs bg-cream-50 p-3 dark:bg-night-700">
       <View className="h-10 w-10 items-center justify-center rounded-full bg-blue-500">
-        <Text className="text-sm font-bold text-white">{initials}</Text>
+        <Text className="text-sm font-bold text-cream-50">{initials}</Text>
       </View>
       <View className="flex-1">
-        <Text className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+        <Text className="text-sm font-semibold text-cream-900 dark:text-night-50">
           {user.name}
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           {user.role}
         </Text>
       </View>
@@ -86,45 +86,45 @@ function ExpandedUserCard({ user }: { user: (typeof users)[0] }) {
     .slice(0, 2);
 
   return (
-    <View className="rounded-xl bg-white p-4 dark:bg-gray-800">
+    <View className="rounded-xs bg-cream-50 p-4 dark:bg-night-700">
       <View className="flex-row items-center gap-3">
         <View className="h-14 w-14 items-center justify-center rounded-full bg-blue-500">
-          <Text className="text-lg font-bold text-white">{initials}</Text>
+          <Text className="text-lg font-bold text-cream-50">{initials}</Text>
         </View>
         <View className="flex-1">
-          <Text className="text-base font-bold text-gray-800 dark:text-gray-100">
+          <Text className="text-base font-bold text-cream-900 dark:text-night-50">
             {user.name}
           </Text>
-          <Text className="text-sm text-gray-500 dark:text-gray-400">
+          <Text className="text-sm text-cream-600 dark:text-night-300">
             {user.role}
           </Text>
         </View>
       </View>
-      <Text className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+      <Text className="mt-3 text-sm text-cream-600 dark:text-night-300">
         {user.bio}
       </Text>
       <View className="mt-3 flex-row gap-4">
         <View className="items-center">
-          <Text className="text-base font-bold text-gray-800 dark:text-gray-100">
+          <Text className="text-base font-bold text-cream-900 dark:text-night-50">
             {user.stats.projects}
           </Text>
-          <Text className="text-xs text-gray-500 dark:text-gray-400">
+          <Text className="text-xs text-cream-600 dark:text-night-300">
             项目
           </Text>
         </View>
         <View className="items-center">
-          <Text className="text-base font-bold text-gray-800 dark:text-gray-100">
+          <Text className="text-base font-bold text-cream-900 dark:text-night-50">
             {user.stats.followers}
           </Text>
-          <Text className="text-xs text-gray-500 dark:text-gray-400">
+          <Text className="text-xs text-cream-600 dark:text-night-300">
             关注者
           </Text>
         </View>
         <View className="items-center">
-          <Text className="text-base font-bold text-gray-800 dark:text-gray-100">
+          <Text className="text-base font-bold text-cream-900 dark:text-night-50">
             {user.stats.stars}
           </Text>
-          <Text className="text-xs text-gray-500 dark:text-gray-400">
+          <Text className="text-xs text-cream-600 dark:text-night-300">
             获赞
           </Text>
         </View>
@@ -142,12 +142,12 @@ export default function ConditionalRender() {
 
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-6 p-4 pb-12">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         Conditional Render
       </Text>
 
       {/* ── 区块一：断点 + 屏幕信息 ────────── */}
-      <View className="rounded-lg bg-violet-50 p-3 dark:bg-violet-900/20">
+      <View className="rounded-xs bg-violet-50 p-3 dark:bg-violet-900/20">
         <Text className="text-sm font-semibold text-violet-800 dark:text-violet-200">
           useBreakpoint() 返回值
         </Text>
@@ -166,10 +166,10 @@ export default function ConditionalRender() {
 
       {/* ── 区块二：条件渲染用户卡片 ──────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           JS 条件渲染：手机紧凑版 vs 平板展开版
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           {isMobile
             ? '当前: 紧凑版（头像 + 名字）'
             : '当前: 展开版（头像 + 名字 + 简介 + 统计）'}
@@ -188,10 +188,10 @@ export default function ConditionalRender() {
 
       {/* ── 区块三：横屏检测布局切换 ────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           横屏检测：横屏水平排列 / 竖屏垂直堆叠
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           isLandscape = width {'>'} height → {isLandscape ? 'true' : 'false'}
         </Text>
       </View>
@@ -206,7 +206,7 @@ export default function ConditionalRender() {
         ].map((item) => (
           <View
             key={item.label}
-            className={`flex-1 rounded-xl p-4 ${item.bg}`}
+            className={`flex-1 rounded-xs p-4 ${item.bg}`}
           >
             <Text className={`text-xs ${item.text} opacity-80`}>
               {item.label}
@@ -220,18 +220,18 @@ export default function ConditionalRender() {
 
       {/* ── 决策指南 ─────────────────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           className 断点 vs JS 条件渲染
         </Text>
       </View>
 
-      <View className="rounded-xl bg-gray-100 p-4 dark:bg-gray-800">
+      <View className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <View className="gap-2">
           <View className="flex-row gap-2">
             <Text className="text-xs font-bold text-emerald-600 dark:text-emerald-400">
               className:
             </Text>
-            <Text className="flex-1 text-xs text-gray-600 dark:text-gray-400">
+            <Text className="flex-1 text-xs text-cream-600 dark:text-night-300">
               修改同一组件的样式（间距、尺寸、显隐）
             </Text>
           </View>
@@ -239,7 +239,7 @@ export default function ConditionalRender() {
             <Text className="text-xs font-bold text-blue-600 dark:text-blue-400">
               JS 渲染:
             </Text>
-            <Text className="flex-1 text-xs text-gray-600 dark:text-gray-400">
+            <Text className="flex-1 text-xs text-cream-600 dark:text-night-300">
               按断点渲染完全不同的组件结构
             </Text>
           </View>
@@ -247,7 +247,7 @@ export default function ConditionalRender() {
             <Text className="text-xs font-bold text-amber-600 dark:text-amber-400">
               横屏检测:
             </Text>
-            <Text className="flex-1 text-xs text-gray-600 dark:text-gray-400">
+            <Text className="flex-1 text-xs text-cream-600 dark:text-night-300">
               需要 JS — className 断点只看宽度，不看方向
             </Text>
           </View>
@@ -255,7 +255,7 @@ export default function ConditionalRender() {
       </View>
 
       {/* Note */}
-      <View className="rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
+      <View className="rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
         <Text className="text-xs text-blue-700 dark:text-blue-300">
           useBreakpoint() 基于 useWindowDimensions，当窗口尺寸变化时自动更新。适用于需要按断点渲染不同组件结构的场景，而非仅仅改变样式。对于纯样式变化，优先使用
           NativeWind 的 md:/lg: 断点前缀。

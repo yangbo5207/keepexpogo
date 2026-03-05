@@ -13,7 +13,7 @@ export default function NavReplaceIndex() {
       </Text>
       <Button label="router.replace('/login')" onPress={() => router.replace('/learn/04-expo-router/06-navigation-api/nav-replace/login' as any)} />
 
-      <View className="w-full rounded-xl bg-secondary-50 p-4 dark:bg-secondary-900/20">
+      <View className="w-full rounded-xs bg-secondary-50 p-4 dark:bg-secondary-900/20">
         <Text className="mb-1 text-xs font-semibold text-secondary-700 dark:text-secondary-300">Expo Router code</Text>
         <Text className="font-mono text-xs leading-5 text-secondary-600 dark:text-secondary-400">
           {'// Replace: swap current screen\nrouter.replace("/home")\n\n// Common pattern: login → home\n// After auth, replace so user\n// can\'t navigate back to login'}

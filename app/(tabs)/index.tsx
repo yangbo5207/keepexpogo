@@ -21,7 +21,7 @@ const highlightCards = [
   {
     title: "学习中心",
     description: "阅读与项目相关的专题内容",
-    href: "/learn/1" as const,
+    href: "/learn" as const,
     icon: BookOpen,
   },
 ];
@@ -44,7 +44,7 @@ export default function HomeScreen() {
         headerBackgroundClassName="bg-cream-100/95 dark:bg-night-700/95"
         className="px-5 pb-14"
       >
-        <View className="my-8 rounded-2xl border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
+        <View className="my-8 rounded-xs border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
           <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
             今日焦点
           </Text>
@@ -57,7 +57,7 @@ export default function HomeScreen() {
           </Text>
           <Link
             href="/component-demos/switch"
-            className="mt-4 self-start rounded-full bg-primary-500 px-4 py-2"
+            className="mt-4 self-start rounded-xs bg-primary-500 px-4 py-2"
           >
             <Text className="text-sm font-semibold text-white">查看演示</Text>
           </Link>
@@ -72,7 +72,7 @@ export default function HomeScreen() {
               <Link
                 key={card.title}
                 href={card.href}
-                className="rounded-2xl border border-cream-200 bg-cream-100 p-4 dark:border-night-600 dark:bg-night-700"
+                className="rounded-xs border border-cream-200 bg-cream-100 p-4 dark:border-night-600 dark:bg-night-700"
               >
                 <View className="flex-row items-center">
                   <View className="mr-3 rounded-full bg-secondary-100 p-2 dark:bg-night-600">
@@ -93,7 +93,7 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        <View className="mt-6 rounded-2xl border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
+        <View className="mt-6 rounded-xs border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
           <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">
             导航提示
           </Text>
@@ -102,7 +102,7 @@ export default function HomeScreen() {
             管理设置与组件演示。
           </Text>
           <View className="mt-4 flex-row gap-3">
-            <View className="flex-1 rounded-xl border border-cream-300 bg-cream-200 px-3 py-2 dark:border-night-500 dark:bg-night-600">
+            <View className="flex-1 rounded-xs border border-cream-300 bg-cream-200 px-3 py-2 dark:border-night-500 dark:bg-night-600">
               <Text className="text-xs font-semibold uppercase text-cream-700 dark:text-night-200">
                 Explore
               </Text>
@@ -110,7 +110,7 @@ export default function HomeScreen() {
                 主题指南
               </Text>
             </View>
-            <View className="flex-1 rounded-xl border border-cream-300 bg-cream-200 px-3 py-2 dark:border-night-500 dark:bg-night-600">
+            <View className="flex-1 rounded-xs border border-cream-300 bg-cream-200 px-3 py-2 dark:border-night-500 dark:bg-night-600">
               <Text className="text-xs font-semibold uppercase text-cream-700 dark:text-night-200">
                 Profile
               </Text>

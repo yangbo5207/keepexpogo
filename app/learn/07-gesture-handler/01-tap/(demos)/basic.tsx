@@ -90,7 +90,7 @@ export default function TapBasicScreen() {
       </View>
 
       <GestureDetector gesture={tap}>
-        <View className="h-24 w-24 items-center justify-center rounded-2xl bg-primary-500 shadow-xl shadow-primary-500/30">
+        <View className="h-24 w-24 items-center justify-center rounded-xs bg-primary-500 shadow-xl shadow-primary-500/30">
           <Text className="text-sm font-semibold text-white">Tap</Text>
         </View>
       </GestureDetector>

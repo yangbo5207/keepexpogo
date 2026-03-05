@@ -13,7 +13,7 @@ export default function ScreenOptionsList() {
 
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800" contentContainerClassName="gap-4 p-4 pb-8">
-      <View className="rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+      <View className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <Text className="mb-3 text-sm font-semibold text-cream-700 dark:text-night-200">
           screenOptions (applies to all screens)
         </Text>
@@ -40,7 +40,7 @@ export default function ScreenOptionsList() {
             description={item.price}
             onPress={() => router.push('/learn/04-expo-router/01-stack/stack-options/detail' as any)}
             left={(
-              <View className="h-12 w-12 items-center justify-center rounded-xl bg-cream-200 dark:bg-night-600">
+              <View className="h-12 w-12 items-center justify-center rounded-xs bg-cream-200 dark:bg-night-600">
                 <Text className="text-xl">{item.emoji}</Text>
               </View>
             )}
@@ -49,7 +49,7 @@ export default function ScreenOptionsList() {
         ))}
       </ListRowGroup>
 
-      <View className="rounded-xl bg-secondary-50 p-4 dark:bg-secondary-900/20">
+      <View className="rounded-xs bg-secondary-50 p-4 dark:bg-secondary-900/20">
         <Text className="mb-1 text-xs font-semibold text-secondary-700 dark:text-secondary-300">
           Expo Router equivalent
         </Text>

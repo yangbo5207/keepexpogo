@@ -7,7 +7,7 @@ export default function ScreenB() {
 
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800" contentContainerClassName="gap-4 p-4 pb-8">
-      <View className="items-center gap-2 rounded-xl bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="items-center gap-2 rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="text-3xl">📝</Text>
         <Text className="text-xs text-cream-600">modal · Stack depth: 3</Text>
       </View>

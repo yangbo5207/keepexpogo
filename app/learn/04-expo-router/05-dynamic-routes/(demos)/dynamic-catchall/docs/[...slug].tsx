@@ -21,7 +21,7 @@ export default function CatchAllDoc() {
       <Stack.Screen options={{ title: doc.title }} />
 
       {/* Breadcrumb */}
-      <View className="flex-row items-center gap-1 rounded-lg bg-cream-100 px-3 py-2 dark:bg-night-700">
+      <View className="flex-row items-center gap-1 rounded-xs bg-cream-100 px-3 py-2 dark:bg-night-700">
         <Text className="text-xs text-cream-600">docs</Text>
         {slugArray.map((seg, i) => (
           <View key={i} className="flex-row items-center gap-1">
@@ -31,9 +31,9 @@ export default function CatchAllDoc() {
         ))}
       </View>
 
-      <View className="rounded-xl bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="mb-2 text-xs font-semibold text-primary-700 dark:text-primary-300">useLocalSearchParams()</Text>
-        <View className="rounded-lg bg-cream-50 p-3 dark:bg-night-700">
+        <View className="rounded-xs bg-cream-50 p-3 dark:bg-night-700">
           <Text className="font-mono text-xs text-primary-600 dark:text-primary-400">
             {'{ slug: '}{JSON.stringify(slugArray)}{' }'}
           </Text>
@@ -45,7 +45,7 @@ export default function CatchAllDoc() {
         <Text className="text-center text-sm text-cream-700 dark:text-night-200">{doc.content}</Text>
       </View>
 
-      <View className="rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+      <View className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <Text className="mb-2 text-sm font-semibold text-cream-700 dark:text-night-200">Route mapping</Text>
         <View className="gap-1.5">
           <View className="flex-row justify-between">
@@ -63,7 +63,7 @@ export default function CatchAllDoc() {
         </View>
       </View>
 
-      <View className="rounded-xl bg-secondary-50 p-4 dark:bg-secondary-900/20">
+      <View className="rounded-xs bg-secondary-50 p-4 dark:bg-secondary-900/20">
         <Text className="mb-1 text-xs font-semibold text-secondary-700 dark:text-secondary-300">Expo Router code</Text>
         <Text className="font-mono text-xs leading-5 text-secondary-600 dark:text-secondary-400">
           {'// app/docs/[...slug].tsx\nimport { useLocalSearchParams } from "expo-router"\n\nexport default function Docs() {\n  const { slug } = useLocalSearchParams()\n  // slug = '}{JSON.stringify(slugArray)}{'\n  // Build breadcrumb from slug array\n}'}

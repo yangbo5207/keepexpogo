@@ -21,16 +21,16 @@ const tokens = {
     success: 'text-success-700 dark:text-success-300',
     danger: 'text-danger-700 dark:text-danger-300',
     warning: 'text-warning-700 dark:text-warning-300',
-    heading: 'text-gray-900 dark:text-gray-100',
-    body: 'text-gray-600 dark:text-gray-400',
-    muted: 'text-gray-400 dark:text-gray-500',
+    heading: 'text-cream-900 dark:text-night-50',
+    body: 'text-cream-600 dark:text-night-300',
+    muted: 'text-cream-500 dark:text-night-400',
   },
   components: {
-    card: 'rounded-card bg-white p-4 dark:bg-gray-800',
+    card: 'rounded-card bg-cream-50 p-4 dark:bg-night-700',
     button: {
       primary: 'items-center rounded-button bg-primary-500 px-5 py-3 active:bg-primary-700',
       danger: 'items-center rounded-button bg-danger-500 px-5 py-3 active:bg-danger-700',
-      ghost: 'items-center rounded-button border border-gray-300 px-5 py-3 active:bg-gray-100 dark:border-gray-600 dark:active:bg-gray-700',
+      ghost: 'items-center rounded-button border border-cream-300 px-5 py-3 active:bg-cream-100 dark:border-night-500 dark:active:bg-night-600',
     },
     badge: {
       success: 'rounded-full bg-success-100 px-3 py-1 dark:bg-success-900/30',
@@ -79,13 +79,13 @@ function TokenButtons() {
   return (
     <View className="gap-3">
       <Pressable className={tokens.components.button.primary}>
-        <Text className="text-base font-semibold text-white">Primary Action</Text>
+        <Text className="text-base font-semibold text-cream-50">Primary Action</Text>
       </Pressable>
       <Pressable className={tokens.components.button.danger}>
-        <Text className="text-base font-semibold text-white">Delete</Text>
+        <Text className="text-base font-semibold text-cream-50">Delete</Text>
       </Pressable>
       <Pressable className={tokens.components.button.ghost}>
-        <Text className="text-base font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-base font-semibold text-cream-700 dark:text-night-200">
           Ghost Button
         </Text>
       </Pressable>
@@ -96,33 +96,33 @@ function TokenButtons() {
 export default function DesignTokens() {
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-6 p-4 pb-12">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         Design Tokens
       </Text>
 
-      <Text className="text-sm text-gray-600 dark:text-gray-400">
+      <Text className="text-sm text-cream-600 dark:text-night-300">
         使用 TypeScript as const 令牌对象统一管理样式，组件通过令牌消费
       </Text>
 
       {/* Token Object Preview */}
-      <View className="rounded-lg bg-gray-50 p-4 dark:bg-gray-800/50">
-        <Text className="mb-2 text-xs font-semibold text-gray-500 dark:text-gray-400">
+      <View className="rounded-xs bg-cream-50 p-4 dark:bg-night-700/50">
+        <Text className="mb-2 text-xs font-semibold text-cream-600 dark:text-night-300">
           tokens 对象结构
         </Text>
-        <Text className="font-mono text-xs text-gray-700 dark:text-gray-300">
+        <Text className="font-mono text-xs text-cream-700 dark:text-night-200">
           {'tokens.colors.primary → "bg-primary-500"'}
         </Text>
-        <Text className="font-mono text-xs text-gray-700 dark:text-gray-300">
-          {'tokens.components.card → "rounded-card bg-white ..."'}
+        <Text className="font-mono text-xs text-cream-700 dark:text-night-200">
+          {'tokens.components.card → "rounded-card bg-cream-50 ..."'}
         </Text>
-        <Text className="font-mono text-xs text-gray-700 dark:text-gray-300">
+        <Text className="font-mono text-xs text-cream-700 dark:text-night-200">
           {'tokens.components.button.primary → "items-center ..."'}
         </Text>
       </View>
 
       {/* Token-Driven Card */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Token-Driven Card
         </Text>
         <TokenCard />
@@ -130,7 +130,7 @@ export default function DesignTokens() {
 
       {/* Token-Driven Buttons */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Token-Driven Buttons
         </Text>
         <TokenButtons />
@@ -138,7 +138,7 @@ export default function DesignTokens() {
 
       {/* Color Token Swatches */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           Color Tokens
         </Text>
         <View className="flex-row gap-2">
@@ -146,15 +146,15 @@ export default function DesignTokens() {
             .filter(([key]) => !key.endsWith('Light'))
             .map(([key, cls]) => (
               <View key={key} className="flex-1 items-center gap-1">
-                <View className={`h-10 w-full rounded-lg ${cls}`} />
-                <Text className="text-xs text-gray-500 dark:text-gray-400">{key}</Text>
+                <View className={`h-10 w-full rounded-xs ${cls}`} />
+                <Text className="text-xs text-cream-600 dark:text-night-300">{key}</Text>
               </View>
             ))}
         </View>
       </View>
 
       {/* Benefits */}
-      <View className="rounded-lg bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="text-sm font-semibold text-primary-800 dark:text-primary-200">
           as const 的好处
         </Text>

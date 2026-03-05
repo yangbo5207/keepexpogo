@@ -24,7 +24,7 @@ export default function ModalPresentIndex() {
             description={m.desc}
             onPress={() => router.push(`/learn/04-expo-router/07-modals/modal-present/${m.key}` as any)}
             left={(
-              <View className={`h-10 w-10 items-center justify-center rounded-xl ${m.color}`}>
+              <View className={`h-10 w-10 items-center justify-center rounded-xs ${m.color}`}>
                 <Text className="text-lg">{m.emoji}</Text>
               </View>
             )}
@@ -32,7 +32,7 @@ export default function ModalPresentIndex() {
           />
         ))}
       </ListRowGroup>
-      <View className="rounded-xl bg-secondary-50 p-4 dark:bg-secondary-900/20">
+      <View className="rounded-xs bg-secondary-50 p-4 dark:bg-secondary-900/20">
         <Text className="mb-1 text-xs font-semibold text-secondary-700 dark:text-secondary-300">Expo Router code</Text>
         <Text className="font-mono text-xs leading-5 text-secondary-600 dark:text-secondary-400">
           {"// app/_layout.tsx\n<Stack.Screen\n  name=\"card-modal\"\n  options={{\n    presentation: 'modal',\n  }}\n/>\n<Stack.Screen\n  name=\"full-modal\"\n  options={{\n    presentation: 'fullScreenModal',\n  }}\n/>"}

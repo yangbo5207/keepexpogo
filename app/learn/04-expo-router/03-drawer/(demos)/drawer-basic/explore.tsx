@@ -7,7 +7,7 @@ export default function DrawerBasicExplore() {
 
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800" contentContainerClassName="items-center justify-center gap-4 p-6">
-      <View className="h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 dark:bg-primary-900/30">
+      <View className="h-16 w-16 items-center justify-center rounded-xs bg-primary-100 dark:bg-primary-900/30">
         <Text className="text-3xl">🧭</Text>
       </View>
       <Text className="text-center text-sm text-cream-700 dark:text-night-200">

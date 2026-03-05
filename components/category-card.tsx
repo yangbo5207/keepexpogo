@@ -16,20 +16,20 @@ export function CategoryCard({ category, onPress }: CategoryCardProps) {
 
   return (
     <Pressable onPress={onPress}>
-      <View className="flex-row items-center gap-3 rounded-xl bg-neutral-100 p-4 dark:bg-neutral-800">
+      <View className="flex-row items-center gap-3 rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <IconSymbol
           name={category.icon as any}
           size={32}
           color={Colors[theme].tint}
         />
         <View className="flex-1 gap-0.5">
-          <Text className="text-base font-semibold text-gray-900 dark:text-gray-100">
+          <Text className="text-base font-semibold text-cream-900 dark:text-night-50">
             {category.title}
           </Text>
-          <Text className="text-[13px] text-gray-500 dark:text-gray-400">
+          <Text className="text-[13px] text-cream-600 dark:text-night-300">
             {category.description}
           </Text>
-          <Text className="mt-0.5 text-xs text-gray-400 dark:text-gray-500">
+          <Text className="mt-0.5 text-xs text-cream-500 dark:text-night-400">
             {category.articles.length} article{category.articles.length !== 1 ? 's' : ''}
           </Text>
         </View>

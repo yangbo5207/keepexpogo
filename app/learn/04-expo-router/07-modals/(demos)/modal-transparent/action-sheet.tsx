@@ -16,7 +16,7 @@ export default function TransparentActionSheet() {
   return (
     <Pressable onPress={() => router.back()} className="flex-1 justify-end bg-black/50">
       <View className="mx-3 mb-3 gap-2">
-        <View className="overflow-hidden rounded-2xl bg-cream-50 dark:bg-night-700">
+        <View className="overflow-hidden rounded-xs bg-cream-50 dark:bg-night-700">
           <View className="items-center border-b border-cream-200 px-4 py-3 dark:border-night-500">
             <Text className="text-xs text-cream-600">Share Post</Text>
           </View>

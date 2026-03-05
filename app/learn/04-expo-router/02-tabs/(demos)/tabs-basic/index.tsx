@@ -12,7 +12,7 @@ export default function TabsBasicHome() {
 
       <View className="gap-3 pt-4">
         {[1, 2, 3].map((i) => (
-          <View key={i} className="rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+          <View key={i} className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
             <View className="flex-row items-center gap-3">
               <View className="h-10 w-10 items-center justify-center rounded-full bg-cream-200 dark:bg-night-600">
                 <Text className="text-sm">🏠</Text>
@@ -30,7 +30,7 @@ export default function TabsBasicHome() {
         ))}
       </View>
 
-      <View className="rounded-xl bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="mb-1 text-xs font-semibold text-primary-700 dark:text-primary-300">
           Expo Router file structure
         </Text>

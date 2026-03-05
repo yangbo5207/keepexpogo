@@ -82,8 +82,8 @@ const colorGroups = [
 function ColorSwatch({ cls, label }: { cls: string; label: string }) {
   return (
     <View className="items-center">
-      <View className={`h-8 w-8 rounded-sm ${cls}`} />
-      <Text className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+      <View className={`h-8 w-8 rounded-xs ${cls}`} />
+      <Text className="mt-1 text-xs text-cream-600 dark:text-night-300">
         {label}
       </Text>
     </View>
@@ -93,7 +93,7 @@ function ColorSwatch({ cls, label }: { cls: string; label: string }) {
 function ColorGroup({ name, shades }: { name: string; shades: { label: string; cls: string }[] }) {
   return (
     <View className="gap-2">
-      <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+      <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
         {name}
       </Text>
       <View className="flex-row flex-wrap gap-2">
@@ -108,11 +108,11 @@ function ColorGroup({ name, shades }: { name: string; shades: { label: string; c
 export default function CustomColors() {
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-6 p-4 pb-12">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         Custom Brand Colors
       </Text>
 
-      <Text className="text-sm text-gray-600 dark:text-gray-400">
+      <Text className="text-sm text-cream-600 dark:text-night-300">
         通过 @theme 定义的 5 组品牌色，每组 10 个色阶（50-900）
       </Text>
 
@@ -123,20 +123,20 @@ export default function CustomColors() {
 
       {/* Opacity Modifiers */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           透明度修饰符
         </Text>
         <View className="flex-row gap-3">
-          <View className="flex-1 items-center rounded-lg bg-primary-500/20 p-3">
+          <View className="flex-1 items-center rounded-xs bg-primary-500/20 p-3">
             <Text className="text-xs text-primary-700 dark:text-primary-300">/20</Text>
           </View>
-          <View className="flex-1 items-center rounded-lg bg-primary-500/50 p-3">
+          <View className="flex-1 items-center rounded-xs bg-primary-500/50 p-3">
             <Text className="text-xs text-white">/50</Text>
           </View>
-          <View className="flex-1 items-center rounded-lg bg-primary-500/80 p-3">
+          <View className="flex-1 items-center rounded-xs bg-primary-500/80 p-3">
             <Text className="text-xs text-white">/80</Text>
           </View>
-          <View className="flex-1 items-center rounded-lg bg-primary-500 p-3">
+          <View className="flex-1 items-center rounded-xs bg-primary-500 p-3">
             <Text className="text-xs text-white">100</Text>
           </View>
         </View>
@@ -144,7 +144,7 @@ export default function CustomColors() {
 
       {/* Practical Use Cases */}
       <View className="gap-3">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           实际用例
         </Text>
 

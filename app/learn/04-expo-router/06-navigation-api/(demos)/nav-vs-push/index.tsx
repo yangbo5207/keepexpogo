@@ -45,7 +45,7 @@ export default function NavVsPushIndex() {
 
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800" contentContainerClassName="gap-4 p-4 pb-8">
-      <View className="items-center rounded-xl bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="items-center rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="text-xs text-primary-500 dark:text-primary-400">Current Route</Text>
         <Text className="mt-1 text-xs text-primary-400">Stack depth: {stack.length}</Text>
       </View>
@@ -92,11 +92,11 @@ export default function NavVsPushIndex() {
 
       <View className="gap-2">
         <Text className="text-xs font-bold uppercase tracking-wider text-cream-600 dark:text-cream-700">Navigation Stack</Text>
-        <View className="rounded-xl bg-cream-100 p-3 dark:bg-night-700">
+        <View className="rounded-xs bg-cream-100 p-3 dark:bg-night-700">
           {[...stack].reverse().map((entry, i) => {
             const isTop = i === 0;
             return (
-              <View key={entry.id} className={`flex-row items-center gap-2 rounded-lg px-3 py-2 ${isTop ? 'bg-cream-50 dark:bg-night-600' : ''}`}>
+              <View key={entry.id} className={`flex-row items-center gap-2 rounded-xs px-3 py-2 ${isTop ? 'bg-cream-50 dark:bg-night-600' : ''}`}>
                 <Text className="text-xs text-cream-500 dark:text-cream-700">{stack.length - i}</Text>
                 <View className={`rounded px-1.5 py-0.5 ${entry.method === 'push' ? 'bg-secondary-100 dark:bg-secondary-900/40' : 'bg-primary-100 dark:bg-primary-900/40'}`}>
                   <Text className={`text-[10px] font-medium ${entry.method === 'push' ? 'text-secondary-600 dark:text-secondary-400' : 'text-primary-600 dark:text-primary-400'}`}>{entry.method}</Text>
@@ -109,7 +109,7 @@ export default function NavVsPushIndex() {
         </View>
       </View>
 
-      <View className="rounded-xl bg-secondary-50 p-4 dark:bg-secondary-900/20">
+      <View className="rounded-xs bg-secondary-50 p-4 dark:bg-secondary-900/20">
         <Text className="mb-1 text-xs font-semibold text-secondary-700 dark:text-secondary-300">Expo Router code</Text>
         <Text className="font-mono text-xs leading-5 text-secondary-600 dark:text-secondary-400">
           {'import { router } from "expo-router"\n\n// navigate: won\'t duplicate\nrouter.navigate("/profile")\n\n// push: always creates new entry\nrouter.push("/profile")\n\n// back: pop one screen\nrouter.back()'}

@@ -31,7 +31,7 @@ export default function HeaderHome() {
         </View>
       </View>
 
-      <View className="rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+      <View className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <Text className="mb-2 text-sm font-semibold text-cream-700 dark:text-night-200">
           Current header options
         </Text>
@@ -53,7 +53,7 @@ export default function HeaderHome() {
         </View>
       </View>
 
-      <View className="rounded-xl bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="mb-1 text-xs font-semibold text-primary-700 dark:text-primary-300">
           Expo Router equivalent
         </Text>
@@ -62,7 +62,7 @@ export default function HeaderHome() {
         </Text>
       </View>
 
-      <View className="rounded-lg bg-secondary-50 p-3 dark:bg-secondary-900/20">
+      <View className="rounded-xs bg-secondary-50 p-3 dark:bg-secondary-900/20">
         <Text className="text-xs text-secondary-700 dark:text-secondary-300">
           Expo Router 中通过 Stack.Screen 的 options 属性配置 Header。支持 headerRight、
           headerLeft、headerTitle 自定义组件，以及 headerLargeTitle 大标题模式（iOS）。

@@ -32,7 +32,7 @@ export default function FormatPercentScreen() {
   return (
     <View className="flex-1 bg-cream-50 dark:bg-night-800">
       <View className="flex-1 items-center justify-center gap-6 px-6">
-        <View className="w-full rounded-2xl border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
+        <View className="w-full rounded-xs border border-cream-200 bg-cream-100 p-5 dark:border-night-600 dark:bg-night-700">
           <Text className="text-xs font-semibold uppercase tracking-widest text-cream-600 dark:text-night-200">Derived Value</Text>
           <Text className="mt-3 text-3xl font-semibold text-cream-900 dark:text-night-50">{percentLabel}</Text>
           <Text className="mt-2 text-sm text-cream-700 dark:text-night-200">通过 useDerivedValue 派生百分比文本。</Text>

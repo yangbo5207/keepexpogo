@@ -26,9 +26,9 @@ function CustomTabBar({ state, navigation }: BottomTabBarProps) {
 
   return (
     <View className="px-4 pb-4 pt-2">
-      <View className="relative flex-row rounded-2xl bg-cream-200 p-1.5 dark:bg-night-700">
+      <View className="relative flex-row rounded-xs bg-cream-200 p-1.5 dark:bg-night-700">
         <Animated.View
-          className="absolute bottom-1.5 left-1.5 top-1.5 rounded-xl bg-cream-50 dark:bg-night-500"
+          className="absolute bottom-1.5 left-1.5 top-1.5 rounded-xs bg-cream-50 dark:bg-night-500"
           style={{
             width: `${100 / TAB_ITEMS.length}%` as any,
             transform: [{

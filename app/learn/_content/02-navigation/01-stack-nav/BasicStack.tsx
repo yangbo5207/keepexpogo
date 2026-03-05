@@ -11,10 +11,10 @@ export default function BasicStack() {
           <Text className="text-base text-blue-500">&larr; Back</Text>
         </Pressable>
         <View className="mt-6 items-center">
-          <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+          <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
             Detail Screen
           </Text>
-          <Text className="mt-2 text-gray-500 dark:text-gray-400">
+          <Text className="mt-2 text-cream-600 dark:text-night-300">
             This simulates a stack navigation push.
           </Text>
         </View>
@@ -24,11 +24,11 @@ export default function BasicStack() {
 
   return (
     <View className="flex-1 items-center justify-center p-4">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         Home Screen
       </Text>
       <Pressable
-        className="mt-4 rounded-lg bg-indigo-500 px-6 py-3 active:bg-indigo-600"
+        className="mt-4 rounded-xs bg-indigo-500 px-6 py-3 active:bg-indigo-600"
         onPress={() => setScreen('detail')}>
         <Text className="font-semibold text-white">Go to Detail</Text>
       </Pressable>

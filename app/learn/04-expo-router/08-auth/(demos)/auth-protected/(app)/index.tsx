@@ -7,11 +7,11 @@ export default function ProtectedDashboard() {
 
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800" contentContainerClassName="gap-4 p-4 pb-8">
-      <View className="flex-row items-center gap-2 rounded-lg bg-success-50 px-3 py-2 dark:bg-success-900/20">
+      <View className="flex-row items-center gap-2 rounded-xs bg-success-50 px-3 py-2 dark:bg-success-900/20">
         <Text className="text-xs">✅</Text>
         <Text className="font-mono text-xs text-success-600 dark:text-success-400">(app) group — {session?.role} access</Text>
       </View>
-      <View className="flex-row items-center gap-3 rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+      <View className="flex-row items-center gap-3 rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <Text className="text-2xl">{session?.emoji}</Text>
         <View className="flex-1">
           <Text className="text-sm font-semibold text-cream-900 dark:text-night-50">{session?.name}</Text>
@@ -23,7 +23,7 @@ export default function ProtectedDashboard() {
         </View>
         <Button className="px-0 py-0" label="Sign Out" size="sm" variant="ghost" onPress={logout} />
       </View>
-      <View className="rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+      <View className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <Text className="mb-3 text-base font-bold text-cream-900 dark:text-night-50">Dashboard</Text>
         {['Revenue: $12,345', 'Active users: 892', 'New signups: 47'].map((item, i) => (
           <View key={i} className="flex-row items-center justify-between border-b border-cream-200 py-2.5 last:border-0 dark:border-night-500">
@@ -32,7 +32,7 @@ export default function ProtectedDashboard() {
           </View>
         ))}
       </View>
-      <View className="rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+      <View className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <Text className="mb-2 text-xs font-semibold text-cream-700 dark:text-night-200">Permission Matrix</Text>
         <View className="gap-1">
           <View className="flex-row">

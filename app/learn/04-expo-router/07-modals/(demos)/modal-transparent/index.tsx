@@ -28,7 +28,7 @@ export default function ModalTransparentIndex() {
           />
         ))}
       </ListRowGroup>
-      <View className="rounded-xl bg-secondary-50 p-4 dark:bg-secondary-900/20">
+      <View className="rounded-xs bg-secondary-50 p-4 dark:bg-secondary-900/20">
         <Text className="mb-1 text-xs font-semibold text-secondary-700 dark:text-secondary-300">Expo Router code</Text>
         <Text className="font-mono text-xs leading-5 text-secondary-600 dark:text-secondary-400">
           {"// app/_layout.tsx\n<Stack.Screen\n  name=\"confirm-delete\"\n  options={{\n    presentation: 'transparentModal',\n    animation: 'fade',\n    headerShown: false,\n  }}\n/>"}

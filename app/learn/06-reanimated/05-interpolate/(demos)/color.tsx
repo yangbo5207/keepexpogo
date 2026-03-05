@@ -27,7 +27,7 @@ export default function InterpolateColorScreen() {
           <Text className="mt-2 text-sm text-cream-700 dark:text-night-200">颜色在主题色之间平滑过渡</Text>
         </View>
 
-        <Animated.View style={animatedStyle} className="h-28 w-28 items-center justify-center rounded-2xl shadow-xl">
+        <Animated.View style={animatedStyle} className="h-28 w-28 items-center justify-center rounded-xs shadow-xl">
           <Animated.Text style={animatedStyle} className="text-sm font-semibold">
             Color
           </Animated.Text>

@@ -1,0 +1,86 @@
+import { useEffect, useState } from "react";
+import { ActivityIndicator, FlatList, Text, View } from "react-native";
+
+interface Contact {
+  id: string;
+  name: string;
+  phone: string;
+  avatar: string;
+}
+
+const CONTACTS: Contact[] = [
+  { id: "1", name: "张三", phone: "138-0000-0001", avatar: "张" },
+  { id: "2", name: "李四", phone: "138-0000-0002", avatar: "李" },
+  { id: "3", name: "王五", phone: "138-0000-0003", avatar: "王" },
+  { id: "4", name: "赵六", phone: "138-0000-0004", avatar: "赵" },
+  { id: "5", name: "孙七", phone: "138-0000-0005", avatar: "孙" },
+];
+
+function ContactItem({ item, index }: { item: Contact; index: number }) {
+  return (
+    <View className="rounded-xs border border-cream-200 bg-cream-50 px-4 py-3 dark:border-night-600 dark:bg-night-700">
+      <View className="flex-row items-center justify-between">
+        <View className="flex-row items-center gap-3">
+          <View className="h-9 w-9 items-center justify-center rounded-xs bg-primary-100 dark:bg-primary-900">
+            <Text className="text-xs font-semibold text-primary-700 dark:text-primary-200">{item.avatar}</Text>
+          </View>
+          <View>
+            <Text className="text-base font-semibold text-cream-900 dark:text-night-100">{item.name}</Text>
+            <Text className="mt-1 text-sm text-cream-600 dark:text-night-300">{item.phone}</Text>
+          </View>
+        </View>
+
+        <View className="rounded-xs bg-cream-200 px-2 py-1 dark:bg-night-600">
+          <Text className="text-[11px] font-semibold uppercase tracking-wider text-cream-700 dark:text-night-200">#{index + 1}</Text>
+        </View>
+      </View>
+
+      <View className="mt-3 h-px bg-cream-200 dark:bg-night-600" />
+
+      <View className="mt-2 flex-row items-center justify-between">
+        <Text className="text-xs font-medium text-cream-600 dark:text-night-300">联系人状态</Text>
+        <View className="flex-row items-center gap-2">
+          <View className="h-2 w-2 rounded-full bg-success-500" />
+          <Text className="text-xs font-semibold text-success-600 dark:text-success-400">已同步</Text>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+export default function ContactListScreen() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1600);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <View className="flex-1 bg-cream-50 px-6 py-8 dark:bg-night-800">
+      <FlatList<Contact>
+        className="mt-5"
+        data={CONTACTS}
+        renderItem={({ item, index }) => <ContactItem item={item} index={index} />}
+        keyExtractor={(item) => item.id}
+        ListHeaderComponent={
+          <View className="mb-2 rounded-xs border border-cream-200 bg-cream-100 px-4 py-3 dark:border-night-600 dark:bg-night-700">
+            <Text className="text-lg font-bold text-cream-900 dark:text-night-100">联系人</Text>
+            <Text className="mt-1 text-sm text-cream-600 dark:text-night-300">共 {CONTACTS.length} 人</Text>
+          </View>
+        }
+        ListEmptyComponent={
+          <View className="items-center py-20">
+            <Text className="text-cream-400 dark:text-night-500">暂无联系人</Text>
+          </View>
+        }
+        ListFooterComponent={isLoading ? <ActivityIndicator style={{ padding: 20 }} /> : <Text className="py-5 text-center text-sm text-cream-500 dark:text-night-400">没有更多了</Text>}
+        ItemSeparatorComponent={() => <View className="m-4 h-px bg-cream-200 dark:bg-night-600" />}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      />
+    </View>
+  );
+}

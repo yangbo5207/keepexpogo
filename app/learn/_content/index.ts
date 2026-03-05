@@ -7,6 +7,7 @@ import animatedApi from './05-animated-api';
 import reanimated from './06-reanimated';
 import gestureHandler from './07-gesture-handler';
 import scrollTabs from './08-scroll-tabs';
+import flatList from './09-flatlist';
 
 export const categories: Category[] = [
   reactBasics,
@@ -17,6 +18,7 @@ export const categories: Category[] = [
   reanimated,
   gestureHandler,
   scrollTabs,
+  flatList,
 ].sort((a, b) => a.order - b.order);
 
 export function getCategoryById(id: string): Category | undefined {

@@ -42,7 +42,7 @@ export default function ThreadCommunicationScreen() {
       <View className="items-center justify-center">
         <View className="absolute h-40 w-0.5 bg-cream-300 dark:bg-night-600" />
 
-        <Animated.View style={animatedStyle} className="h-20 w-20 rounded-2xl bg-primary-500 shadow-xl shadow-primary-500/30" />
+        <Animated.View style={animatedStyle} className="h-20 w-20 rounded-xs bg-primary-500 shadow-xl shadow-primary-500/30" />
       </View>
 
       <Button

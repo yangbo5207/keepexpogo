@@ -55,12 +55,12 @@ export default function ResponsivePage() {
 
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-6 pb-12">
-      <Text className="px-4 pt-4 text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="px-4 pt-4 text-xl font-bold text-cream-900 dark:text-night-50">
         Responsive Dashboard
       </Text>
 
       {/* ── 顶部导航栏 ─────────────────── */}
-      <View className="flex-row items-center justify-between bg-white px-4 py-3 dark:bg-gray-800">
+      <View className="flex-row items-center justify-between bg-cream-50 px-4 py-3 dark:bg-night-700">
         <View className="flex-row items-center gap-3">
           <Text className="text-lg font-bold text-blue-600 dark:text-blue-400">
             Dashboard
@@ -69,9 +69,9 @@ export default function ResponsivePage() {
           {isMobile && (
             <Pressable
               onPress={() => setMenuOpen(!menuOpen)}
-              className="rounded-md bg-gray-100 px-2 py-1 active:bg-gray-200 dark:bg-gray-700"
+              className="rounded-xs bg-cream-100 px-2 py-1 active:bg-cream-200 dark:bg-night-600"
             >
-              <Text className="text-sm text-gray-700 dark:text-gray-300">
+              <Text className="text-sm text-cream-700 dark:text-night-200">
                 {menuOpen ? '✕' : '☰'}
               </Text>
             </Pressable>
@@ -82,7 +82,7 @@ export default function ResponsivePage() {
         <View className="hidden flex-row gap-4 md:flex">
           {navLinks.map((link) => (
             <Pressable key={link} className="active:opacity-70">
-              <Text className="text-sm text-gray-600 dark:text-gray-400">
+              <Text className="text-sm text-cream-600 dark:text-night-300">
                 {link}
               </Text>
             </Pressable>
@@ -92,13 +92,13 @@ export default function ResponsivePage() {
 
       {/* 手机菜单展开 */}
       {isMobile && menuOpen && (
-        <View className="-mt-6 gap-1 bg-white px-4 pb-3 dark:bg-gray-800">
+        <View className="-mt-6 gap-1 bg-cream-50 px-4 pb-3 dark:bg-night-700">
           {navLinks.map((link) => (
             <Pressable
               key={link}
-              className="rounded-lg px-3 py-2 active:bg-gray-100 dark:active:bg-gray-700"
+              className="rounded-xs px-3 py-2 active:bg-cream-100 dark:active:bg-night-600"
             >
-              <Text className="text-sm text-gray-700 dark:text-gray-300">
+              <Text className="text-sm text-cream-700 dark:text-night-200">
                 {link}
               </Text>
             </Pressable>
@@ -108,10 +108,10 @@ export default function ResponsivePage() {
 
       {/* ── 统计卡片网格 ───────────────── */}
       <View className="gap-2 px-4">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           统计卡片
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           手机 2 列(w-[48%]) → 平板 4 列(md:w-[23%])
         </Text>
       </View>
@@ -120,7 +120,7 @@ export default function ResponsivePage() {
         {stats.map((stat) => (
           <View
             key={stat.label}
-            className={`w-[48%] rounded-xl p-3 md:w-[23%] ${stat.color}`}
+            className={`w-[48%] rounded-xs p-3 md:w-[23%] ${stat.color}`}
           >
             <Text className={`text-xs ${stat.textColor} opacity-80`}>
               {stat.label}
@@ -137,34 +137,34 @@ export default function ResponsivePage() {
 
       {/* ── 侧边栏 + 内容区 ──────────── */}
       <View className="gap-2 px-4">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           侧边栏 + 内容
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           手机隐藏侧边栏 → md: 显示
         </Text>
       </View>
 
       <View className="flex-row gap-3 px-4">
         {/* 侧边栏 */}
-        <View className="hidden rounded-xl bg-white p-3 dark:bg-gray-800 md:flex md:w-44">
-          <Text className="mb-2 text-xs font-bold text-gray-500 dark:text-gray-400">
+        <View className="hidden rounded-xs bg-cream-50 p-3 dark:bg-night-700 md:flex md:w-44">
+          <Text className="mb-2 text-xs font-bold text-cream-600 dark:text-night-300">
             导航菜单
           </Text>
           {sidebarItems.map((item) => (
             <Pressable
               key={item.label}
-              className={`rounded-lg px-3 py-2 ${
+              className={`rounded-xs px-3 py-2 ${
                 item.active
                   ? 'bg-blue-50 dark:bg-blue-900/30'
-                  : 'active:bg-gray-50 dark:active:bg-gray-700'
+                  : 'active:bg-cream-50 dark:active:bg-night-600'
               }`}
             >
               <Text
                 className={`text-sm ${
                   item.active
                     ? 'font-semibold text-blue-600 dark:text-blue-400'
-                    : 'text-gray-600 dark:text-gray-400'
+                    : 'text-cream-600 dark:text-night-300'
                 }`}
               >
                 {item.label}
@@ -174,23 +174,23 @@ export default function ResponsivePage() {
         </View>
 
         {/* 主内容 */}
-        <View className="flex-1 gap-3 rounded-xl bg-white p-4 dark:bg-gray-800">
-          <Text className="text-sm font-bold text-gray-800 dark:text-gray-100">
+        <View className="flex-1 gap-3 rounded-xs bg-cream-50 p-4 dark:bg-night-700">
+          <Text className="text-sm font-bold text-cream-900 dark:text-night-50">
             数据概览
           </Text>
 
           {/* 模拟图表占位 */}
-          <View className="h-32 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
-            <Text className="text-sm text-gray-400 dark:text-gray-500">
+          <View className="h-32 items-center justify-center rounded-xs bg-cream-100 dark:bg-night-600">
+            <Text className="text-sm text-cream-500 dark:text-night-400">
               图表区域
             </Text>
-            <Text className="mt-1 text-xs text-gray-400 dark:text-gray-500">
+            <Text className="mt-1 text-xs text-cream-500 dark:text-night-400">
               (此处可放置 Victory / react-native-chart-kit)
             </Text>
           </View>
 
           {/* 最近活动 */}
-          <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+          <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
             最近活动
           </Text>
           {[
@@ -200,12 +200,12 @@ export default function ResponsivePage() {
           ].map((activity) => (
             <View
               key={activity.action}
-              className="flex-row items-center justify-between border-b border-gray-100 py-2 dark:border-gray-700"
+              className="flex-row items-center justify-between border-b border-cream-100 py-2 dark:border-night-600"
             >
-              <Text className="text-xs text-gray-600 dark:text-gray-400">
+              <Text className="text-xs text-cream-600 dark:text-night-300">
                 {activity.action}
               </Text>
-              <Text className="text-xs text-gray-400 dark:text-gray-500">
+              <Text className="text-xs text-cream-500 dark:text-night-400">
                 {activity.time}
               </Text>
             </View>
@@ -215,10 +215,10 @@ export default function ResponsivePage() {
 
       {/* ── 底部表单（KeyboardAvoidingView 演示）──── */}
       <View className="gap-2 px-4">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           键盘规避表单
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           KeyboardAvoidingView 包裹输入区域，聚焦输入时自动避让键盘
         </Text>
       </View>
@@ -226,26 +226,26 @@ export default function ResponsivePage() {
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >
-        <View className="mx-4 gap-3 rounded-xl bg-white p-4 dark:bg-gray-800">
-          <Text className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+        <View className="mx-4 gap-3 rounded-xs bg-cream-50 p-4 dark:bg-night-700">
+          <Text className="text-sm font-semibold text-cream-900 dark:text-night-50">
             发送消息
           </Text>
           <TextInput
-            className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-800 focus:border-blue-500 dark:border-gray-600 dark:text-gray-200 dark:focus:border-blue-400"
+            className="rounded-xs border border-cream-300 px-4 py-2.5 text-sm text-cream-800 focus:border-blue-500 dark:border-night-500 dark:text-night-100 dark:focus:border-blue-400"
             placeholder="输入消息内容..."
             placeholderTextColor="#9ca3af"
             value={message}
             onChangeText={setMessage}
             multiline
           />
-          <Pressable className="items-center rounded-lg bg-blue-500 py-2.5 active:bg-blue-700 dark:bg-blue-600">
-            <Text className="text-sm font-semibold text-white">发送</Text>
+          <Pressable className="items-center rounded-xs bg-blue-500 py-2.5 active:bg-blue-700 dark:bg-blue-600">
+            <Text className="text-sm font-semibold text-cream-50">发送</Text>
           </Pressable>
         </View>
       </KeyboardAvoidingView>
 
       {/* ── SafeArea 说明 ──────────────── */}
-      <View className="mx-4 rounded-lg bg-amber-50 p-3 dark:bg-amber-900/20">
+      <View className="mx-4 rounded-xs bg-amber-50 p-3 dark:bg-amber-900/20">
         <Text className="text-xs font-semibold text-amber-700 dark:text-amber-300">
           SafeAreaView 说明
         </Text>
@@ -256,7 +256,7 @@ export default function ResponsivePage() {
       </View>
 
       {/* Note */}
-      <View className="mx-4 rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
+      <View className="mx-4 rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
         <Text className="text-xs text-blue-700 dark:text-blue-300">
           这个仪表盘页面组合了本文的响应式模式：导航栏手机/平板自适应 → 统计卡片
           2→4 列网格 → 侧边栏显隐 → KeyboardAvoidingView 表单。所有布局都遵循

@@ -25,7 +25,7 @@ export default function DynamicParamsList() {
             description={`ID: ${item.id} · ${item.author}`}
             onPress={() => router.push(`/learn/04-expo-router/05-dynamic-routes/dynamic-params/${item.id}` as any)}
             left={(
-              <View className="h-11 w-11 items-center justify-center rounded-xl bg-primary-100 dark:bg-primary-900/30">
+              <View className="h-11 w-11 items-center justify-center rounded-xs bg-primary-100 dark:bg-primary-900/30">
                 <Text className="text-xl">{item.emoji}</Text>
               </View>
             )}

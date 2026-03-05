@@ -7,7 +7,7 @@ export default function HideTabbarSettings() {
       <Text className="text-center text-sm text-cream-700 dark:text-night-200">
         Also outside (tabs), no tab bar visible.
       </Text>
-      <View className="w-full rounded-xl bg-warning-50 p-4 dark:bg-warning-900/20">
+      <View className="w-full rounded-xs bg-warning-50 p-4 dark:bg-warning-900/20">
         <Text className="mb-1 text-xs font-semibold text-warning-700 dark:text-warning-300">Alternative: hide via tabBarStyle</Text>
         <Text className="font-mono text-xs leading-5 text-warning-600 dark:text-warning-400">
           {'// Inside (tabs), hide bar for one screen:\n<Tabs.Screen\n  name="settings"\n  options={{\n    tabBarStyle: { display: "none" }\n  }}\n/>'}

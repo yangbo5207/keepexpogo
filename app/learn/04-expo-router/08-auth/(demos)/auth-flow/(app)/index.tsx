@@ -6,7 +6,7 @@ export default function AuthAppHome() {
 
   return (
     <ScrollView className="flex-1 bg-cream-50 dark:bg-night-800" contentContainerClassName="gap-4 p-4 pb-8">
-      <View className="flex-row items-center gap-2 rounded-lg bg-success-50 px-3 py-2 dark:bg-success-900/20">
+      <View className="flex-row items-center gap-2 rounded-xs bg-success-50 px-3 py-2 dark:bg-success-900/20">
         <Text className="text-xs">✅</Text>
         <Text className="font-mono text-xs text-success-600 dark:text-success-400">(app) group — authenticated</Text>
       </View>

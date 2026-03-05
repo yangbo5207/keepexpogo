@@ -32,12 +32,12 @@ export default function AdaptiveGrid() {
 
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-6 p-4 pb-12">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         Adaptive Grid
       </Text>
 
       {/* ── 屏幕宽度指示器 ──────────────────── */}
-      <View className="rounded-lg bg-indigo-50 p-3 dark:bg-indigo-900/20">
+      <View className="rounded-xs bg-indigo-50 p-3 dark:bg-indigo-900/20">
         <Text className="text-sm font-semibold text-indigo-800 dark:text-indigo-200">
           当前宽度: {Math.round(width)}px · 断点: {breakpoint}
         </Text>
@@ -48,10 +48,10 @@ export default function AdaptiveGrid() {
 
       {/* ── 区块一：响应式多列网格 ──────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           响应式网格：flex-wrap + 百分比宽度
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           w-full → md:w-[48%] → lg:w-[31%]
         </Text>
       </View>
@@ -60,7 +60,7 @@ export default function AdaptiveGrid() {
         {products.map((item) => (
           <View
             key={item.name}
-            className={`w-full rounded-xl p-4 md:w-[48%] lg:w-[31%] ${item.color}`}
+            className={`w-full rounded-xs p-4 md:w-[48%] lg:w-[31%] ${item.color}`}
           >
             <Text className={`text-base font-bold ${item.textColor}`}>
               {item.name}
@@ -74,26 +74,26 @@ export default function AdaptiveGrid() {
 
       {/* ── 区块二：侧边栏显隐 ────────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           侧边栏模式：hidden md:flex
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           手机隐藏侧边栏，平板以上显示
         </Text>
       </View>
 
       <View className="flex-row gap-3">
         {/* 侧边栏 — 手机隐藏 */}
-        <View className="hidden rounded-xl bg-gray-100 p-4 dark:bg-gray-800 md:flex md:w-48">
-          <Text className="mb-3 text-sm font-bold text-gray-700 dark:text-gray-300">
+        <View className="hidden rounded-xs bg-cream-100 p-4 dark:bg-night-700 md:flex md:w-48">
+          <Text className="mb-3 text-sm font-bold text-cream-700 dark:text-night-200">
             侧边导航
           </Text>
           {['仪表盘', '用户管理', '订单列表', '系统设置'].map((item) => (
             <View
               key={item}
-              className="border-b border-gray-200 py-2 dark:border-gray-700"
+              className="border-b border-cream-200 py-2 dark:border-night-600"
             >
-              <Text className="text-sm text-gray-600 dark:text-gray-400">
+              <Text className="text-sm text-cream-600 dark:text-night-300">
                 {item}
               </Text>
             </View>
@@ -101,14 +101,14 @@ export default function AdaptiveGrid() {
         </View>
 
         {/* 主内容区 */}
-        <View className="flex-1 rounded-xl bg-white p-4 dark:bg-gray-800">
-          <Text className="text-sm font-bold text-gray-700 dark:text-gray-300">
+        <View className="flex-1 rounded-xs bg-cream-50 p-4 dark:bg-night-700">
+          <Text className="text-sm font-bold text-cream-700 dark:text-night-200">
             主内容区域
           </Text>
-          <Text className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+          <Text className="mt-2 text-xs text-cream-600 dark:text-night-300">
             这里是主要内容。在 md 断点以上，左侧会出现侧边导航栏。手机上侧边栏自动隐藏，主内容占满全宽。
           </Text>
-          <View className="mt-3 rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
+          <View className="mt-3 rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
             <Text className="text-xs text-blue-700 dark:text-blue-300">
               关键类名：侧边栏使用 hidden md:flex md:w-48，主内容使用 flex-1
             </Text>
@@ -118,10 +118,10 @@ export default function AdaptiveGrid() {
 
       {/* ── 区块三：响应式间距 ────────────── */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           响应式间距：gap 随断点变化
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           gap-2 → md:gap-4 → lg:gap-6
         </Text>
       </View>
@@ -130,7 +130,7 @@ export default function AdaptiveGrid() {
         {['A', 'B', 'C', 'D'].map((item) => (
           <View
             key={item}
-            className="h-16 w-16 items-center justify-center rounded-lg bg-teal-100 dark:bg-teal-900/30 md:h-20 md:w-20 lg:h-24 lg:w-24"
+            className="h-16 w-16 items-center justify-center rounded-xs bg-teal-100 dark:bg-teal-900/30 md:h-20 md:w-20 lg:h-24 lg:w-24"
           >
             <Text className="text-lg font-bold text-teal-700 dark:text-teal-300">
               {item}
@@ -140,7 +140,7 @@ export default function AdaptiveGrid() {
       </View>
 
       {/* Note */}
-      <View className="rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
+      <View className="rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
         <Text className="text-xs text-blue-700 dark:text-blue-300">
           核心模式：RN 没有 CSS Grid，使用 flex-row flex-wrap + 百分比宽度模拟多列网格。配合
           hidden md:flex 实现侧边栏在不同断点的显隐。所有样式都是 Mobile-First：基础样式 =

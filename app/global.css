@@ -109,7 +109,7 @@
   --spacing-18: 4.5rem;
 
   /* ── Semantic Border Radius ────────────────── */
-  --radius-button: 0.625rem;
-  --radius-card: 1rem;
-  --radius-dialog: 1.25rem;
+  --radius-button: 0.375rem;
+  --radius-card: 0.375rem;
+  --radius-dialog: 0.375rem;
 }

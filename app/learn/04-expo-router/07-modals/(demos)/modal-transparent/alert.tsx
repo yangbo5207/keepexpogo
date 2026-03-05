@@ -7,7 +7,7 @@ export default function TransparentAlert() {
 
   return (
     <Pressable onPress={() => router.back()} className="flex-1 items-center justify-center bg-black/50">
-      <Pressable onPress={() => {}} className="mx-8 w-72 rounded-2xl bg-cream-50 p-6 dark:bg-night-700">
+      <Pressable onPress={() => {}} className="mx-8 w-72 rounded-xs bg-cream-50 p-6 dark:bg-night-700">
         <View className="items-center gap-3">
           <Text className="text-3xl">⚠️</Text>
           <Text className="text-center text-sm text-cream-700 dark:text-night-200">Are you sure you want to delete this item? This action cannot be undone.</Text>

@@ -1,0 +1,32 @@
+export const designSystem = {
+  radius: {
+    xs: 6,
+  },
+  colors: {
+    light: {
+      background: "#fffdf7",
+      surface: "#fbf8f0",
+      text: "#584a35",
+      mutedText: "#958362",
+      border: "#ede4ce",
+      primary: "#876045",
+      primaryForeground: "#ffffff",
+      icon: "#6e4d38",
+      tabIconDefault: "#b3a57e",
+      tabIconSelected: "#876045",
+    },
+    dark: {
+      background: "#1c1a15",
+      surface: "#25221c",
+      text: "#ede9e0",
+      mutedText: "#9e978a",
+      border: "#3d3830",
+      primary: "#a07a5c",
+      primaryForeground: "#14120f",
+      icon: "#e6d5ce",
+      tabIconDefault: "#746e62",
+      tabIconSelected: "#e6d5ce",
+    },
+  },
+} as const;
+

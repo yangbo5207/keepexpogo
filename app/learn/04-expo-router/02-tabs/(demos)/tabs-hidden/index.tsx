@@ -29,7 +29,7 @@ export default function TabsHiddenHome() {
             description={route.desc}
             onPress={() => router.push(`/learn/04-expo-router/02-tabs/tabs-hidden/${route.key}` as any)}
             left={(
-              <View className="h-10 w-10 items-center justify-center rounded-xl bg-warning-100 dark:bg-warning-900/30">
+              <View className="h-10 w-10 items-center justify-center rounded-xs bg-warning-100 dark:bg-warning-900/30">
                 <Text className="text-lg">{route.icon}</Text>
               </View>
             )}
@@ -38,7 +38,7 @@ export default function TabsHiddenHome() {
         ))}
       </ListRowGroup>
 
-      <View className="rounded-xl bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="mb-1 text-xs font-semibold text-primary-700 dark:text-primary-300">File structure</Text>
         <Text className="font-mono text-xs leading-5 text-primary-600 dark:text-primary-400">
           {'app/(tabs)/\n├── _layout.tsx\n├── index.tsx        ← Home (visible)\n├── search.tsx       ← Search (visible)\n├── settings.tsx     ← Settings (visible)\n├── notifications.tsx ← href: null (hidden)\n└── admin.tsx        ← href: null (hidden)'}

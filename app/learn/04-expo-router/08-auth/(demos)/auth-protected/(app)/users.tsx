@@ -12,7 +12,7 @@ export default function ProtectedUsers() {
         <Text className="text-center text-sm text-cream-700 dark:text-night-200">
           Your role ({session?.role}) doesn't have permission to access Users.
         </Text>
-        <View className="w-full rounded-xl bg-danger-50 p-4 dark:bg-danger-900/20">
+        <View className="w-full rounded-xs bg-danger-50 p-4 dark:bg-danger-900/20">
           <Text className="font-mono text-xs leading-5 text-danger-600 dark:text-danger-400">
             {'// Role-based redirect\nif (session.role !== "admin") {\n  return <Redirect href="/denied" />\n}'}
           </Text>
@@ -27,7 +27,7 @@ export default function ProtectedUsers() {
         <Text className="text-3xl">👥</Text>
       </View>
       {['Total users: 1,234', 'Active today: 456', 'Pending review: 12'].map((item, i) => (
-        <View key={i} className="flex-row items-center justify-between rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+        <View key={i} className="flex-row items-center justify-between rounded-xs bg-cream-100 p-4 dark:bg-night-700">
           <Text className="text-sm text-cream-700 dark:text-night-200">{item.split(':')[0]}</Text>
           <Text className="font-semibold text-cream-900 dark:text-night-50">{item.split(':')[1]}</Text>
         </View>

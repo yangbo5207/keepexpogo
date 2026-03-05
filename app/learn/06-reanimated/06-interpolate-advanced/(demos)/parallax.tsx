@@ -52,7 +52,7 @@ export default function ParallaxScrollScreen() {
 
           <View className="mt-6 gap-4">
             {Array.from({ length: 18 }, (_, i) => (
-              <View key={`item-${i}`} className="rounded-2xl border border-cream-200 bg-cream-100 px-4 py-4 dark:border-night-600 dark:bg-night-700">
+              <View key={`item-${i}`} className="rounded-xs border border-cream-200 bg-cream-100 px-4 py-4 dark:border-night-600 dark:bg-night-700">
                 <Text className="text-sm font-semibold text-cream-900 dark:text-night-50">Item {i + 1}</Text>
                 <Text className="mt-1 text-xs text-cream-600 dark:text-night-200">内容块示例，用于撑起滚动距离。</Text>
               </View>

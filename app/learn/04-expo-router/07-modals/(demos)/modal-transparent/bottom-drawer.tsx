@@ -18,7 +18,7 @@ export default function TransparentBottomDrawer() {
             </Pressable>
           </View>
           {['Dark Mode', 'Notifications', 'Sound Effects'].map((item) => (
-            <View key={item} className="flex-row items-center justify-between rounded-xl bg-cream-100 px-4 py-3 dark:bg-night-600">
+            <View key={item} className="flex-row items-center justify-between rounded-xs bg-cream-100 px-4 py-3 dark:bg-night-600">
               <Text className="text-sm text-cream-800 dark:text-cream-400">{item}</Text>
               <View className="h-6 w-10 items-end justify-center rounded-full bg-primary-500 px-0.5">
                 <View className="h-5 w-5 rounded-full bg-cream-50" />

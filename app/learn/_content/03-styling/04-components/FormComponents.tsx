@@ -13,14 +13,14 @@ interface InputProps {
 function Input({ label, placeholder, error, className = '' }: InputProps) {
   return (
     <View className={`gap-1 ${className}`}>
-      <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+      <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
         {label}
       </Text>
       <TextInput
-        className={`peer rounded-lg border px-4 py-2.5 text-sm text-gray-800 dark:text-gray-200 ${
+        className={`peer rounded-xs border px-4 py-2.5 text-sm text-cream-900 dark:text-night-50 ${
           error
             ? 'border-red-400 dark:border-red-500'
-            : 'border-gray-300 focus:border-blue-500 dark:border-gray-600 dark:focus:border-blue-400'
+            : 'border-cream-300 focus:border-blue-500 dark:border-night-500 dark:focus:border-blue-400'
         }`}
         placeholder={placeholder}
         placeholderTextColor="#9ca3af"
@@ -40,36 +40,36 @@ function Input({ label, placeholder, error, className = '' }: InputProps) {
 export default function FormComponents() {
   return (
     <ScrollView className="flex-1" contentContainerClassName="gap-6 p-4 pb-12">
-      <Text className="text-xl font-bold text-gray-800 dark:text-gray-100">
+      <Text className="text-xl font-bold text-cream-900 dark:text-night-50">
         Input 组件与表单
       </Text>
 
       {/* Basic Inputs */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           基础 Input — 聚焦时 peer 联动
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           点击输入框聚焦，观察下方提示文字变色（peer-focus:）
         </Text>
       </View>
 
-      <View className="gap-4 rounded-xl bg-white p-4 dark:bg-gray-800">
+      <View className="gap-4 rounded-xs bg-cream-50 p-4 dark:bg-night-700">
         <Input label="用户名" placeholder="请输入用户名" />
         <Input label="邮箱" placeholder="example@mail.com" />
       </View>
 
       {/* Error State */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           错误状态
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           error prop 触发红色边框 + 错误提示文字
         </Text>
       </View>
 
-      <View className="gap-4 rounded-xl bg-white p-4 dark:bg-gray-800">
+      <View className="gap-4 rounded-xs bg-cream-50 p-4 dark:bg-night-700">
         <Input
           label="密码"
           placeholder="请输入密码"
@@ -84,15 +84,15 @@ export default function FormComponents() {
 
       {/* Mock Form */}
       <View className="gap-2">
-        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+        <Text className="text-sm font-semibold text-cream-700 dark:text-night-200">
           模拟注册表单
         </Text>
-        <Text className="text-xs text-gray-500 dark:text-gray-400">
+        <Text className="text-xs text-cream-600 dark:text-night-300">
           组合多个 Input 展示表单布局
         </Text>
       </View>
 
-      <View className="gap-4 rounded-xl bg-white p-4 dark:bg-gray-800">
+      <View className="gap-4 rounded-xs bg-cream-50 p-4 dark:bg-night-700">
         <Input label="姓名" placeholder="张三" />
         <Input label="邮箱" placeholder="zhangsan@example.com" />
         <Input
@@ -104,7 +104,7 @@ export default function FormComponents() {
       </View>
 
       {/* Note */}
-      <View className="rounded-lg bg-blue-50 p-3 dark:bg-blue-900/20">
+      <View className="rounded-xs bg-blue-50 p-3 dark:bg-blue-900/20">
         <Text className="text-xs text-blue-700 dark:text-blue-300">
           核心设计：Input 组件内部使用 peer 标记 TextInput，后续的提示 Text 通过
           peer-focus: 响应聚焦状态。error prop

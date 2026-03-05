@@ -1,7 +1,7 @@
 import { Text, View, type ViewStyle } from "react-native";
 import Animated from "react-native-reanimated";
 
-const FRONT_CLASS = "absolute h-full w-full overflow-hidden rounded-3xl border border-primary-300 bg-primary-500 shadow-xl shadow-primary-500/30 dark:border-primary-700";
+const FRONT_CLASS = "absolute h-full w-full overflow-hidden rounded-xs border border-primary-300 bg-primary-500 shadow-xl shadow-primary-500/30 dark:border-primary-700";
 
 type FlipCardFaceProps = {
   style: Animated.AnimatedStyleProp<ViewStyle>;

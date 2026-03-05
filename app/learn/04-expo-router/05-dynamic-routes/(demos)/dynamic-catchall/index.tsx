@@ -43,7 +43,7 @@ export default function DynamicCatchallIndex() {
           </ListRowGroup>
         </View>
       ))}
-      <View className="rounded-xl bg-cream-100 p-4 dark:bg-night-700">
+      <View className="rounded-xs bg-cream-100 p-4 dark:bg-night-700">
         <Text className="mb-1 text-xs font-semibold text-cream-700 dark:text-night-200">File structure</Text>
         <Text className="font-mono text-xs leading-5 text-cream-700 dark:text-night-200">
           {'app/docs/\n└── [...slug].tsx\n\nMatches:\n/docs/getting-started\n/docs/api/overview\n/docs/api/v2/endpoints\n/docs/guides/deployment/docker\n... any depth!'}

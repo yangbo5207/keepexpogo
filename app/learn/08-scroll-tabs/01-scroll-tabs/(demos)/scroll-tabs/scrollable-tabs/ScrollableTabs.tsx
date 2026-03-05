@@ -1,41 +1,9 @@
-import { memo, useCallback, useEffect, useRef } from "react";
-import { LayoutChangeEvent, Pressable, Text, View, type ViewStyle } from "react-native";
+import { useCallback, useEffect, useRef } from "react";
+import type { LayoutChangeEvent } from "react-native";
+import { View } from "react-native";
 import Animated, { Easing, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
-
-export type ScrollTabItem = {
-  key: string;
-  label: string;
-};
-
-type ScrollableTabsProps = {
-  tabs: ScrollTabItem[];
-  activeIndex: number;
-  onChange: (index: number) => void;
-  indicatorWidth?: number;
-  indicatorClassName?: string;
-  indicatorStyle?: Omit<ViewStyle, "width" | "transform">;
-};
-
-type TabItemProps = {
-  index: number;
-  label: string;
-  active: boolean;
-  onPress: (index: number) => void;
-  onLayoutMeasure: (index: number, event: LayoutChangeEvent) => void;
-};
-
-const TabItem = memo(
-  function TabItem({ index, label, active, onPress, onLayoutMeasure }: TabItemProps) {
-    return (
-      <Pressable onPress={() => onPress(index)} onLayout={(event) => onLayoutMeasure(index, event)} className="px-4 py-3">
-        <Text className={active ? "text-sm font-semibold text-primary-700 dark:text-primary-200" : "text-sm font-medium text-cream-700 dark:text-night-300"}>{label}</Text>
-      </Pressable>
-    );
-  },
-  (prev, next) => {
-    return prev.index === next.index && prev.label === next.label && prev.active === next.active && prev.onPress === next.onPress && prev.onLayoutMeasure === next.onLayoutMeasure;
-  },
-);
+import { TabItem } from "./TabItem";
+import type { ScrollableTabsProps } from "./types";
 
 function clamp(value: number, min: number, max: number) {
   return Math.max(min, Math.min(max, value));

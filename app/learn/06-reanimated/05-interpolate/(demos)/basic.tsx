@@ -28,7 +28,7 @@ export default function InterpolateBasicScreen() {
           <Text className="mt-2 text-sm text-cream-700 dark:text-night-200">插值驱动位移、缩放、透明度</Text>
         </View>
 
-        <Animated.View style={animatedStyle} className="h-24 w-24 items-center justify-center rounded-2xl bg-primary-500 shadow-xl shadow-primary-500/30">
+        <Animated.View style={animatedStyle} className="h-24 w-24 items-center justify-center rounded-xs bg-primary-500 shadow-xl shadow-primary-500/30">
           <Text className="text-sm font-semibold text-white">Card</Text>
         </Animated.View>
       </View>

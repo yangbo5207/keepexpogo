@@ -27,7 +27,7 @@ export default function HideTabbarHome() {
           right={<Text className="text-cream-600">→</Text>}
         />
       </ListRowGroup>
-      <View className="rounded-xl bg-primary-50 p-4 dark:bg-primary-900/20">
+      <View className="rounded-xs bg-primary-50 p-4 dark:bg-primary-900/20">
         <Text className="mb-1 text-xs font-semibold text-primary-700 dark:text-primary-300">File structure</Text>
         <Text className="font-mono text-xs leading-5 text-primary-600 dark:text-primary-400">
           {'app/\n├── _layout.tsx       ← <Stack>\n├── (tabs)/\n│   ├── _layout.tsx   ← <Tabs>\n│   ├── index.tsx     ← Home (has tab bar)\n│   ├── search.tsx    ← Search (has tab bar)\n│   └── profile.tsx   ← Profile (has tab bar)\n├── detail.tsx        ← No tab bar\n└── settings.tsx      ← No tab bar'}
